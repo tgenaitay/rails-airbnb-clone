@@ -10,6 +10,8 @@ gem 'redis'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'faker'
+gem 'simple_form'
+gem 'bootstrap-datepicker-rails'
 
 gem 'sass-rails'
 gem 'jquery-rails'
