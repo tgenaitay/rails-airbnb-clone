@@ -10,11 +10,13 @@ User.destroy_all
 users = []
 
 5.times do
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name
   user = User.new({
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.email,
-    password: Faker::Internet.password
+    first_name: first_name,
+    last_name: last_name,
+    email: "#{first_name}.#{last_name}@gmail.com",
+    password: "password"
     })
   users << user
   user.save!
@@ -38,10 +40,12 @@ users.each do |user|
 end
 
 3.times do
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name
   user = User.new({
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.email,
+     first_name: first_name,
+    last_name: last_name,
+    email: "#{first_name}.#{last_name}@gmail.com",
     password: Faker::Internet.password
     })
   users << user
