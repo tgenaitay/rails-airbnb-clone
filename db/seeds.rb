@@ -46,7 +46,7 @@ end
      first_name: first_name,
     last_name: last_name,
     email: "#{first_name}.#{last_name}@gmail.com",
-    password: Faker::Internet.password
+    password: "password"
     })
   users << user
   user.save!
