@@ -1,0 +1,13 @@
+<h1>My orders</h1>
+<p>Find me in app/views/orders/index.html.erb</p>
+<lu>
+<% @orders.each do |order| %>
+  <li>
+    <div class="order_card">
+      <p>Menu: <%= order.menu.name %> from <%= link_to order.menu.user.full_name, chef_path(order.menu.user) %>
+      <p>
+      <p>Date: <%= order.buddy_date %></p>
+      <p>Approuved: <%= order.approved %></p>
+    </div>
+<% end %>
+</lu>
