@@ -22,8 +22,8 @@
   color: #fff!important;
   z-index: 1;
   font-size: 24px;
-  border: 1px solid #D23333!important;
-  background-color: #D23333;
+  border: 1px solid $brand-color!important;
+  background-color: $brand-color;
 }
 .searchbar input {
   flex: 0 1 300px;

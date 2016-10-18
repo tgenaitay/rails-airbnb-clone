@@ -67,3 +67,28 @@
 .video-container video.fillWidth {
     width: 100%;
 }
+
+// VALUE PROP
+
+.value-prop {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 20px;
+}
+.value-prop .feature {
+  padding: 20px 30px;
+}
+.value-prop i.fa {
+  font-size: 2.4em;
+  color: $brand-color;
+}
+
+.value-prop h3 {
+  font-size: 20px;
+}
+
+.value-prop p {
+  font-size: 14px;
+}
+
