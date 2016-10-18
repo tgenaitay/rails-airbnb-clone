@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'orders/index'
+
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
@@ -7,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   get "orders" => "orders#index"
-  get "chef" => "pages#chef"
+  get "chef/:id" => "pages#chef", as: "chef"
   get "chef/orders" => "orders#index"
 
 
