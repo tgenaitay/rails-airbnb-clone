@@ -7,7 +7,7 @@
   height: 70px;
   padding: 0px 30px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 /* Optional class to fix the navbar on top */
@@ -20,8 +20,20 @@
 }
 
 /* Navbar logo */
-.navbar-wagon-brand img {
-  width: 50px;
+
+a.navbar-wagon-brand {
+  text-decoration:none;
+}
+.navbar-wagon-brand h4 {
+  color:$brand-color;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Dancing Script', cursive;
+}
+
+.navbar-wagon-brand h4:hover {
+  color:black;
+  text-decoration:none;
 }
 
 /* Navbar right section (with form, links, button) */
@@ -29,6 +41,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: absolute;
+  right: 30px;
 }
 
 /* Navbar item */
@@ -40,8 +54,9 @@
 
 /* Navbar standard link */
 .navbar-wagon-link {
-  color: #616668;
+  color: #8e8e8e;
   font-size: 14px;
+  line-height: 40px;
 }
 .navbar-wagon-link:hover {
   color: #da552f;
@@ -52,17 +67,26 @@
 .navbar-wagon-button {
   margin-left: 10px;
   padding: 0 20px;
-  border-radius: 20em;
   line-height: 40px;
-  background-color: #D23333;
-  color: white;
+  background-color: #fff;
+  color: #8e8e8e;
   font-size: 14px;
-  border: 2px solid #D23333;
+  border: 1px solid #D23333;
+  border-radius: 0px;
+  margin-right:10px;
 }
 .navbar-wagon-button:hover {
-  color: white;
-  background: #D23333;
-  border-color: #ac2626;
+  color: #8e8e8e;
+  background: rgba(204, 204, 204, 0.07);
+  border: 1px solid #8e8e8e;
+}
+
+.navbar-wagon-item i {
+  font-size:24px;
+  margin-left:12px;
+  top: 4px;
+  position: relative;
+  color: #E6E6E6;
 }
 
 /* Navbar search form */
@@ -72,6 +96,7 @@
   justify-content: flex-end;
   padding: 0 10px;
   position: relative;
+  margin-left: 20px;
 }
 .navbar-wagon-search-btn {
   line-height: 40px;
@@ -79,9 +104,10 @@
   border: none;
   background: transparent;
   position: absolute;
-  right: 14px;
+  left: 14px;
   top: -2px;
   z-index: 1;
+  font-size: 24px;
 }
 .navbar-wagon-search-input {
   flex: 0 1 300px;
@@ -89,9 +115,9 @@
   line-height: 40px;
   font-weight: lighter;
   color: #666666;
-  border: 1px solid #E6E6E6;
-  border-radius: 5px;
-  padding: 0 10px;
+  border: 1px solid #FFF;
+  // border-radius: 5px;
+  padding: 0 40px;
   font-size: 14px;
   outline: none;
 }
