@@ -18,7 +18,9 @@ users = []
     last_name: last_name,
     email: "#{first_name}.#{last_name}@gmail.com",
     password: "password",
-    photo_url:  "https://randomuser.me/api/portraits/men/#{i}.jpg"
+    photo_url:  "https://randomuser.me/api/portraits/men/#{i}.jpg",
+    description: Faker::Lorem.sentence(25),
+    address: Faker::Address.city
     })
   users << user
   user.save!
@@ -55,7 +57,9 @@ simple_users = []
     last_name: last_name,
     email: "#{first_name}.#{last_name}@gmail.com",
     password: "password",
-    photo_url:  "https://randomuser.me/api/portraits/men/#{i+70}.jpg"
+    photo_url:  "https://randomuser.me/api/portraits/men/#{i+70}.jpg",
+    description: Faker::Lorem.sentence(25),
+    address: Faker::Address.city
     })
   simple_users << user
   user.save!
