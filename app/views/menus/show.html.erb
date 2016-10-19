@@ -1,1 +1,24 @@
+ <div class="row">
+  <% @menu%>
+     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 
+      <div class="menu-card">
+      <div class="photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=cl_image_path(menu.photo.path) %>');"><%= link_to " ", menu, class: 'link-menu' %>
+      </div>
+
+      <%= link_to chef_path(menu.user.id), class: 'link-chef' do %><%= cl_image_tag menu.user.photo.path, width: 300, height: 200, crop: :fill, class: 'avatar' %><% end %>
+      </a>
+        <div class="description">
+          <h3><%= menu.name %></h3>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <span><%= menu.price %>€</span>
+        </div>
+        <div class="localisation">
+          <p><i class="fa fa-map-marker"></i> City</p>
+          <%= link_to "Order now", menu, class: 'btn cta-btn' %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 class MenusController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     portions = params[:portions]
@@ -17,10 +17,8 @@ class MenusController < ApplicationController
   end
 
   def show
-    @menu = Menu.new
+
     @menu = Menu.find(params[:id])
-    #@alert_message = "You are viewing #{@menu.name}"
-    #@flat_coordinates = { lat: @flat.latitude, lng: @flat.longitude }
 
   end
 
