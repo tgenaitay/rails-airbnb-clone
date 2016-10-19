@@ -5,7 +5,7 @@
   </a>
 
   <!-- Search form -->
-  <form action="" class="navbar-wagon-search">
+  <form action="" class="navbar-wagon-search hidden-xs">
     <button type="submit" class="navbar-wagon-search-btn">
       <i class="fa fa-search"></i>
     </button>
@@ -14,7 +14,7 @@
 
 
   <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+  <div class="navbar-wagon-right hidden-xs">
 
     <%= link_to "chef", class: "navbar-wagon-item btn navbar-wagon-button" do %> Become chef <i class="fa fa-info"></i> <% end %>
 
@@ -69,7 +69,7 @@
   </div>
 
   <!-- Dropdown appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
+  <div class="navbar-wagon-item hidden-md hidden-lg hidden-sm">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
