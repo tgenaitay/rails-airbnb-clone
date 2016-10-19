@@ -9,7 +9,7 @@
       </div>
       <%= render 'searchbar' %>
       <div class="filter"></div>
-      <%= video_tag([asset_path("Fruity/MP4/Fruity.mp4"), asset_path("Fruity/OGV/Fruity.ogv")], autoplay: true, loop: true, class: "fillWidth" ) %>
+      <%= video_tag("/videos/fruity/MP4/Fruity.mp4", "/videos/fruity/OGV/Fruity.ogv", autoplay: true, loop: true, class: "fillWidth" ) %>
     </div>
 
     <%= render 'features' %>
