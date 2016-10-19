@@ -5,7 +5,8 @@
         <%= form_tag(menus_path, method: "get", class: "searchbar") do %>
           <%= text_field_tag :city, nil, placeholder: 'City?', class: 'search-city' %>
           <%= text_field_tag :date, nil, placeholder: 'Date?', "data-provide" => "datepicker" %>
-          <div class="styled-select"><%= select_tag :portions, options_for_select((1..5)) %></div>
+          <div class="styled-select"><%= select_tag :portions, options_for_select(["Portions", "1", "2", "3", "4", "5"], :selected => "Portions", :disabled => "Portions")
+ %></div>
           <%= submit_tag "Search", class: "search-btn" %>
         <% end %>
       </div>

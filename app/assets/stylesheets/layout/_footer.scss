@@ -1,1 +1,67 @@
-// Your footer style
+#footer {
+  margin-top:30px;
+  background: #333333;
+  text-align: center;
+  font-size:12px;
+  height:400px;
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+
+}
+
+/* Footer logo */
+
+#footer h4 {
+  color:white;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Dancing Script', cursive;
+  transition: color 0.1s ease-in-out;
+}
+
+#footer h4:hover {
+  color:$brand-color;
+  text-decoration:none;
+}
+
+#footer h5 {
+  margin-top: 30px;
+}
+
+.newsletter-input {
+  display:flex;
+  flex-direction:row;
+}
+
+#footer .form-control {
+  flex:0 0 auto;
+  width:70%;
+}
+
+#footer .btn {
+  flex:0 0 auto;
+}
+
+.footer-menu {
+  margin-top: 40px;
+}
+
+#footer a {
+  text-decoration:none;
+  color:white;
+  transition: color 0.1s ease-in-out;
+}
+
+#footer a:hover {
+  text-decoration:none;
+  color:$brand-color;
+}
+
+#footer p i {
+  color:$brand-color;
+}
+
+
+

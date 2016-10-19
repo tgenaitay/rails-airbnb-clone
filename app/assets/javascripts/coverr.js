@@ -20,7 +20,7 @@ function scaleVideoContainer() {
 
     var height = $(window).height() + 5;
     var unitHeight = parseInt(height) + 'px';
-    $('.homepage').css('height',unitHeight);
+    $('.video-container').css('height',unitHeight);
 
 }
 
