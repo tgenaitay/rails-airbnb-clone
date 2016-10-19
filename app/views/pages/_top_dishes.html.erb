@@ -16,7 +16,7 @@
       </a>
         <div class="description">
           <h3><%= menu.name %></h3>
-          <p>Lorem ipsum dolor sit amet.</p>
+          <p><%= truncate(menu.description, :length => 40) %></p>
           <span><%= menu.price %>€</span>
         </div>
         <div class="localisation">
