@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/assembler/attachinary.git
+  remote: git@github.com:assembler/attachinary.git
   revision: c1e77b2a8551b0cbb09622f5d5767de421223dfa
   specs:
     attachinary (1.3.1)
