@@ -9,14 +9,15 @@ Menu.destroy_all
 User.destroy_all
 users = []
 
-5.times do
+5.times do |i|
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
   user = User.new({
     first_name: first_name,
     last_name: last_name,
     email: "#{first_name}.#{last_name}@gmail.com",
-    password: "password"
+    password: "password",
+    photo_url:  "https://randomuser.me/api/portraits/men/#{i}.jpg"
     })
   users << user
   user.save!
@@ -46,7 +47,8 @@ end
      first_name: first_name,
     last_name: last_name,
     email: "#{first_name}.#{last_name}@gmail.com",
-    password: "password"
+    password: "password",
+    photo_url:  "https://randomuser.me/api/portraits/men/#{i+70}.jpg"
     })
   users << user
   user.save!
