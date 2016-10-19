@@ -2,5 +2,6 @@
 <div>
   <p>name:<%= @user.full_name %></p>
   <p>description: <%= @user.description %>
-  <p>photo: <%= @user.photo %>
+
+  <%= cl_image_tag @user.photo.path, width: 300, height: 200, crop: :fill %>
 </div>
