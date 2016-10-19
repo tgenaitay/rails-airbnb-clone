@@ -12,7 +12,8 @@
       <div class="photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=image_path "fake-menu.jpg" %>');"><%= link_to " ", menu, class: 'link-menu' %>
       </div>
 
-      <a class="link-chef" href="#user"><%= image_tag "fake-user.jpg", class: 'avatar' %></a>
+      <a class="link-chef" href="#user"><%= cl_image_tag menu.user.photo.path, width: 300, height: 200, crop: :fill, class: 'avatar' %>
+      </a>
         <div class="description">
           <h3><%= menu.name %></h3>
           <p>Lorem ipsum dolor sit amet.</p>
