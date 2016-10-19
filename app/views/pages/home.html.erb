@@ -1,2 +1,20 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="homepage">
+    <div class="video-container">
+      <div class="title-container">
+        <div class="headline">
+            <!--Logo here-->
+            <h1>Beauty Food</h1>
+            <h3><strong>Enjoy</strong> the cooking of the best chefs nearby</h3>
+        </div>
+      </div>
+      <%= render 'searchbar' %>
+      <div class="filter"></div>
+      <%=video_tag(["Fruity/MP4/Fruity.mp4", "Fruity/OGV/Fruity.ogv"], autoplay: true, loop: true, class: "fillWidth" ) %>
+    </div>
+
+    <%= render 'features' %>
+
+    <%= render 'top_dishes' %>
+
+    </div>
+</div>

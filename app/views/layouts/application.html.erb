@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>TODO</title>
+    <title>Beautyfood - Enjoy the cooking of the best chefs nearby</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -12,9 +12,8 @@
   <body>
   <%= render 'shared/navbar' %>
   <%= render 'shared/flashes' %>
-   <div class="container">
-    <%= yield %>
-    </div>
-    <%= javascript_include_tag 'application' %>
+  <%= yield %>
+  <%= javascript_include_tag 'application' %>
+  <%= cloudinary_js_config %>
   </body>
 </html>

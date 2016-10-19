@@ -10,6 +10,7 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
+require "attachinary/orm/active_record"  # <= Add this line
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -23,3 +24,4 @@ module RailsAirbnbClone
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+

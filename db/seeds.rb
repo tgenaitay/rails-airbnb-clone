@@ -3,7 +3,8 @@
 #
 # Examples:
 #
-   require 'faker'
+require 'faker'
+require 'date'
 Order.destroy_all
 Menu.destroy_all
 User.destroy_all
@@ -32,7 +33,7 @@ users.each do |user|
       description: Faker::Lorem.sentence,
       price: Faker::Number.between(2, 15),
       portions: Faker::Number.between(4, 8),
-      availability: Date.new,
+      availability: DateTime.now,
       user: user
       })
     menus << menu
@@ -40,7 +41,9 @@ users.each do |user|
   end
 end
 
-3.times do
+simple_users = []
+
+5.times do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
   user = User.new({
@@ -50,21 +53,23 @@ end
     password: "password",
     photo_url:  "https://randomuser.me/api/portraits/men/#{i+70}.jpg"
     })
-  users << user
+  simple_users << user
   user.save!
 end
 
 orders = []
-
+user_index = 0
 menus.each do |menu|
   2.times do |i|
     order = Order.new({
-     date: Date.new,
+     date: DateTime.now,
      portions: i * 4,
      approved: i.odd?,
      menu: menu,
-     user: users.last
+     user: simple_users[user_index]
       })
+    user_index += 1
+    user_index = 0 if user_index == simple_users.length
     orders << order
     order.save!
   end
