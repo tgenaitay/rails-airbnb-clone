@@ -36,10 +36,10 @@
   font-size: 14px;
   outline: none;
   border-left:0px;
+  height:50px;
 }
 .searchbar input:focus  {
-  border-color: #000;
-  border-left:1px solid #000;
+  background-color: $focus-color;
 }
 
 .searchbar .search-city  {
@@ -47,9 +47,9 @@
 }
 
 .searchbar .styled-select {
-  background: image-url('arrow-down.png') no-repeat 90% 20%;
+  background: image-url('arrow-down.png') no-repeat 90% 40%;
   background-color: white;
-  height: 42px;
+  height: 50px;
   overflow: hidden;
   width: 240px;
   line-height: 40px;
@@ -59,24 +59,12 @@
   border-left:0px;
 }
 
-.searchbar .styled-select:after {
-  content: '<i class="fa fa-caret-down" aria-hidden="true"></i>';
-}
-
 .searchbar .styled-select select {
    background: transparent;
    border: none;
    font-size: 14px;
-   height: 42px;
+   height: 50px;
    padding: 5px; /* If you add too much padding here, the options won't show in IE */
    width: 268px;
    color: #666666;
 }
-
-.searchbar .styled-select.slate select {
-   border: 1px solid #ccc;
-   font-size: 16px;
-   height: 34px;
-   width: 268px;
-}
-
