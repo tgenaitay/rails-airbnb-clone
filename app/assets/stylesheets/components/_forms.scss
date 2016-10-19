@@ -75,6 +75,7 @@
   // border-left:0px;
   height:50px;
   border-radius: 0px;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .form-control:focus  {
@@ -89,6 +90,7 @@
 .btn {
   font-size: 14px;
   border-radius: 0px!important;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .btn:hover {
@@ -112,6 +114,7 @@
   border: 1px solid #D23333 !important;
   background-color: #D23333!important;
   height: 50px;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .btn-primary:hover {
