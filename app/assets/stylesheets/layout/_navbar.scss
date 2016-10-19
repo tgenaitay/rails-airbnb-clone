@@ -85,7 +85,7 @@ a.navbar-wagon-brand {
 }
 .navbar-wagon-button:hover {
   color: $hover-color;
-  background: $focus-color;
+  background: $focus-color!important;
   border: 1px solid #8e8e8e;
 }
 
