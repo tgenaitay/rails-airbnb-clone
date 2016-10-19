@@ -1,7 +1,61 @@
+.form-bg {
+  background: image-url('banner.jpg') no-repeat 90% 40%;
+  background-size: cover !important;
+  min-height: 450px;
+}
+
+.form-card {
+  background-color: rgba(0, 0, 0, 0.6);
+  color:white;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.form-card h2 {
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.3);
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
+  font-size: 40px;
+}
+
+.form-card a, .form-card a:hover {
+  color:white;
+  text-decoration: none;
+  font-size:12px;
+}
+
+.form-control {
+  flex: 0 1 300px;
+  transition: all 0.15s ease;
+  line-height: 40px;
+  font-weight: lighter;
+  color: #666666;
+  border: 1px solid #CCCCCC;
+  padding: 0 10px;
+  font-size: 14px;
+  outline: none;
+  border-left:0px;
+  height:50px;
+  border-radius: 0px;
+}
+
+.form-control:focus  {
+  background-color: $focus-color;
+}
+
+.radio label, .checkbox label {
+  font-size:12px;
+  line-height: 20px;
+}
+
 .btn {
   font-size: 14px;
-  border-radius: 0px;
+  border-radius: 0px!important;
+}
 
+.btn:hover {
+  background-color: $btn-hover;
 }
 
 .cta-btn {
@@ -13,7 +67,14 @@
   background-color: #D23333;
 }
 
-.form-bg {
-  background: image-url('banner.jpg') no-repeat 90% 40%;
-  background-size: cover !important;
+.btn-default {
+  line-height: 20px;
+  color: #fff !important;
+  font-weight: lighter;
+  z-index: 1;
+  border: 1px solid #D23333 !important;
+  background-color: #D23333;
+  height: 50px;
 }
+
+
