@@ -1,0 +1,7 @@
+<h1>Fiche du chef <%= @user.full_name %></h1>
+<div>
+  <p>name:<%= @user.full_name %></p>
+  <p>description: <%= @user.description %>
+
+  <%= cl_image_tag @user.photo.path, width: 300, height: 200, crop: :fill %>
+</div>

@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get "chef/:id" => "pages#chef", as: "chef"
   get "chef/orders" => "orders#index"
 
+  mount Attachinary::Engine => "/attachinary"
+
+
 
   resources :users, only: [:show]
   root to: 'pages#home'

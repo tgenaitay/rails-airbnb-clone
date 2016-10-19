@@ -1,41 +1,41 @@
 <h1>Menus</h1>
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-<tbody>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 col-sm-offset-3">
-    <%= form_tag("/search", method: "get", class: "searchbar") do %>
-      <%= text_field_tag :date, nil, placeholder: 'Date?', "data-provide" => "datepicker" %>
-      <div class="styled-select"><%= select_tag :type, options_for_select([["lunch"], ["dinner"]]) %>
-      <div class="styled-select"><%= select_tag :portions, options_for_select((5..1000)) %></div>
-    <% end %>
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <%= form_tag(menus_path, method: "get", class: "searchbar") do %>
+        <%= text_field_tag :date, nil, placeholder: 'Date?', "data-provide" => "datepicker" %>
+        <div class="">
+          <%= select_tag :type, options_for_select([["lunch"], ["dinner"]]), class: "styled-select" %>
+        </div>
+        <div class="">
+          <%= select_tag :portions, options_for_select((1..20)), class: "styled-select" %>
+        </div>
+        <div class="">
+          <%= select_tag :price, options_for_select((4..200)), class: "styled-select" %>
+        </div>
+        <%= submit_tag "Submit" %>
+      <% end %>
     </div>
   </div>
+</div>
+<ul>
+  <% @menus.each do |menu| %>
+  <li>
+    <div>
+        <%= menu.name %>
+        <%= menu.description %>
+    Price:
+        <%= menu.price %>
+    Portions:
+        <%= menu.portions %>
+        <%= menu.availability %>
+        <%= link_to 'Order', menu_path(menu)%>
+    </div>
+  </li>
+  <% end %>
+</ul>
 
-    <ul>
-    <%= @menus.each do |menu| %>
-    <li>
-      <div>
-          <%= menu.name %>
-          <%= menu.description %>
-          <%= menu.price %>
-          <%= menu.portions %>
-          <%= menu.availability %>
-          <%= link_to 'Order', menu_path(menu)%>
-      </div>
-    </li>
-    <% end %>
-    </ul>
-  </tbody>
-</table>
 
 
 
