@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :menus
   has_many :orders
 
+  has_attachment :photo
+
   def self.find_for_facebook_oauth(auth)
     user_params = auth.to_h.slice(:provider, :uid)
     user_params.merge! auth.info.slice(:email, :first_name, :last_name)
@@ -30,6 +32,10 @@ class User < ApplicationRecord
 
   def full_name
     "#{self.first_name} #{self.last_name}"
+  end
+
+  def is_chef?
+    return menus.count > 0
   end
 
 end
