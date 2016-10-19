@@ -2,11 +2,27 @@ class MenusController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
+    portions = params[:portions].to_i
+    price = params[:price].to_i
+    type = params[:type]
+    availability = params[:availability]
+
     @menus = Menu.all
+
+    #@menus = @menus.where(type: type) if type
+    @menus = @menus.where(availability: availability) if availability
+    @menus = @menus.where("price <= ? ", price) if price
+    @menus = @menus.where("portions >= ? ", portions) if portions
+
+
   end
 
   def show
     @menu = Menu.new
+    @menu = Menu.find(params[:id])
+    #@alert_message = "You are viewing #{@menu.name}"
+    #@flat_coordinates = { lat: @flat.latitude, lng: @flat.longitude }
+
   end
 
   def new

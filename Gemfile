@@ -12,6 +12,7 @@ gem 'omniauth-facebook'
 gem 'faker'
 gem 'simple_form'
 gem 'bootstrap-datepicker-rails'
+gem 'geocoder'
 
 gem 'sass-rails'
 gem 'jquery-rails'
