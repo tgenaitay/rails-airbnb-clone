@@ -1,0 +1,31 @@
+<div class="container top-dishes">
+<div class="row">
+  <div class="col-xs-12 col-sm-12 section">
+    <h2 class="text-center">Featured</h2>
+  </div>
+</div>
+  <div class="row">
+  <% @menus.last(3).each do |menu| %>
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+
+      <div class="menu-card">
+      <div class="photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=image_path "fake-menu.jpg" %>');"><%= link_to " ", menu, class: 'link-menu' %>
+      </div>
+
+      <a class="link-chef" href="#user"><%= image_tag "fake-user.jpg", class: 'avatar' %></a>
+        <div class="description">
+          <h3><%= menu.name %></h3>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <span><%= menu.price %>€</span>
+        </div>
+        <div class="localisation">
+          <p><i class="fa fa-map-marker"></i> City</p>
+          <%= link_to "Order now", menu, class: 'btn cta-btn' %>
+        </div>
+      </div>
+
+    </div>
+  <% end %>
+  </div>
+</div>
+
