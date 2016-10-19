@@ -26,24 +26,28 @@ end
 
 menus = []
 
+photo_index = 1
 users.each do |user|
-  5.times do
+  2.times do
     menu = Menu.new({
       name: Faker::Commerce.product_name,
       description: Faker::Lorem.sentence,
       price: Faker::Number.between(2, 15),
       portions: Faker::Number.between(4, 8),
       availability: DateTime.now,
-      user: user
+      user: user,
+      photo_url: "http://photos-famille.net/wagon/img#{photo_index}.jpg"
       })
     menus << menu
     menu.save!
+    photo_index += 1
+    photo_index = 1 if photo_index == 4
   end
 end
 
 simple_users = []
 
-5.times do
+5.times do |i|
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
   user = User.new({
