@@ -75,6 +75,7 @@
   justify-content: center;
   align-items: stretch;
   margin-top: 20px;
+  color: black;
 }
 .value-prop .feature {
   padding: 20px 30px;
@@ -91,4 +92,20 @@
 .value-prop p {
   font-size: 14px;
 }
+
+// TOP DISHES
+
+.top-dishes h2 {
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.3);
+  font-family: 'Dancing Script', cursive;
+  background-color: #fff;
+  position: relative;
+  top: 20px;
+  width: 170px;
+  text-align: center;
+  margin: 0 auto;
+}
+
 
