@@ -1,22 +1,20 @@
 <div class="container top-dishes">
 <div class="row">
   <div class="col-xs-12 col-sm-12 section">
-    <h2 class="text-center">Featured</h2>
+    <h2 class="text-center">Dishes</h2>
   </div>
 </div>
   <div class="row">
-  <% @menus.last(3).each do |menu| %>
+  <% menus.each do |menu| %>
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 
       <div class="menu-card">
       <div class="photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=cl_image_path(menu.photo.path) %>');"><%= link_to " ", menu, class: 'link-menu' %>
       </div>
 
-      <%= link_to chef_path(menu.user.id), class: 'link-chef' do %><%= cl_image_tag menu.user.photo.path, width: 300, height: 200, crop: :fill, class: 'avatar' %><% end %>
-      </a>
         <div class="description">
           <h3><%= menu.name %></h3>
-          <p><%= truncate(menu.description, :length => 40) %></p>
+          <p>Lorem ipsum dolor sit amet.</p>
           <span><%= menu.price %>€</span>
         </div>
         <div class="localisation">
@@ -29,4 +27,5 @@
   <% end %>
   </div>
 </div>
+
 
