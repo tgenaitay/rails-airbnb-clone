@@ -25,8 +25,7 @@
         length = order.portions
         str = "<span>#{length} </span>" + '<i class="fa fa-cutlery"></i>'
         %>
-        <%=
-        cl_image_tag(order.user.photo.path, width: 100, height: 100, crop: :fill, class: 'avatar hidden-xs space') %>
+        <%= order.user.photo ? cl_image_tag(order.user.photo.path, width: 100, height: 100, crop: :fill, class: 'avatar hidden-xs space') : image_tag("no_photo.png", width: 100, height: 100, crop: :fill, class: 'avatar') %>
         <div class='orders-body space'>
           <h4 class="orders-client"><%= order.user.full_name %></h4>
           <p><%= str.html_safe %> - "<%= order.menu.name %>"</p>
@@ -36,7 +35,7 @@
          <% if status != 'pending' %>
         <li><p>Status: <%= status %></p></li>
         <% else %>
-        <li><%= link_to approve_path(order) do %> <i class="fa fa-check order_approved"></i> <% end %>| <%= link_to reject_path(order) do %> <i class="fa fa-trash order_pending"></i> <% end %>
+        <li><%= link_to approve_path(order) do %> <i class="fa fa-check order_approved"></i><% end %><span class="tip">approve</span>|reject <%= link_to reject_path(order), class: "toto", title: 'reject', 'data-toggle': 'tooltip' do %> <i class="fa fa-ban order_pending"></i> <% end %>
         </li>
         <% end %>
         </ul>
@@ -47,3 +46,5 @@
     </div>
   </div>
 </div>
+
+

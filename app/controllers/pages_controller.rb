@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  skip_before_action :authenticate_user!, only: [:chef, :home]
+  skip_before_action :authenticate_user!, only: [:home]
 
   def landingchef
     @user = User.find(params[:id])
