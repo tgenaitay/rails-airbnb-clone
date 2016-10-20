@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   end
 
   get "orders" => "orders#index"
-  get "chef/:id" => "pages#chef", as: "chef"
+  get "chef/:id" => "pages#landingchef", as: "chef"
+  get "chef/" => "pages#chef"
   get "chef/orders" => "orders#index"
 
   mount Attachinary::Engine => "/attachinary"

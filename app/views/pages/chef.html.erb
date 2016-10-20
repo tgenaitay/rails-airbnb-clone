@@ -1,9 +1,1 @@
-<h1>Fiche du chef <%= @user.full_name %></h1>
-<div>
-  <p>name:<%= @user.full_name %></p>
-  <p>description: <%= @user.description %>
-    <%= @user.photo ? cl_image_tag(@user.photo.path, width: 300, height: 200, crop: :fill) : image_tag("no_photo.png")%>
-
-
-  <%= render 'my_dishes', menus: @user.menus %>
-</div>
+<h1>Cook meals at home for your neighbours to take away</h1>
