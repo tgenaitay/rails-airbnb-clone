@@ -9,7 +9,7 @@
     <button type="submit" class="navbar-wagon-search-btn">
       <i class="fa fa-search"></i>
     </button>
-  <%= text_field_tag :city, nil, placeholder: 'Where?', class: 'navbar-wagon-search-input' %>
+  <%= text_field_tag :city, params[:city], placeholder: 'Where?', class: 'navbar-wagon-search-input' %>
   </form>
   <% end %>
 
