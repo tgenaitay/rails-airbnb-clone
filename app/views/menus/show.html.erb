@@ -1,66 +1,108 @@
 <div class="show">
 
   <div class="container">
-  <div class="row">
-  <!--  left side -->
-  <div class="col-xs-12 col-sm-8">
+    <div class="row">
+    <!--  left side -->
+    <div class="col-xs-12 col-sm-8">
 
-        <div class="menu-card">
+          <div class="menu-card">
 
-          <div class="photo large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=cl_image_path @menu.photo.path, width: 1000, height: 500, crop: :fill  %>');">
-          </div>
+            <div class="photo large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=cl_image_path @menu.photo.path, width: 1000, height: 500, crop: :fill  %>');">
+            </div>
 
-          <%= link_to chef_path(@menu.user.id), class: 'link-chef-large' do %><%= @menu.user.photo ? cl_image_tag(@menu.user.photo.path, width: 300, height: 200, crop: :crop, class: 'avatar') : image_tag("no_photo.png", width: 300, height: 200, crop: :crop, class: 'avatar') %><% end %>
+            <%= link_to chef_path(@menu.user.id), class: 'link-chef-large' do %><%= @menu.user.photo ? cl_image_tag(@menu.user.photo.path, width: 300, height: 200, crop: :crop, class: 'avatar') : image_tag("no_photo.png", width: 300, height: 200, crop: :crop, class: 'avatar') %><% end %>
 
-          <div class="description">
-            <h3><%= @menu.name %></h3>
-            <div><%= @menu.description %></div>
-            <div><%= @menu.availability %></div>
-            <div><%= @menu.price %>€</div>
-          </div>
+            <div class="description">
+              <h3><%= @menu.name %></h3>
+              <div><%= @menu.description %></div>
+              <div><%= @menu.availability %></div>
+              <div><%= @menu.price %>€</div>
+            </div>
 
           <div class="localisation">
             <p><i class="fa fa-map-marker"></i> <%= @menu.user.city %></p>
+
           </div>
 
-        </div>
+          <div class="menu-card">
 
-        <div class="menu-card">
+            <div class="description">
+              <ul>
+                <li>Starter:<%= @menu.starter %></li>
+                <li>Meal:<%= @menu.meal %></li>
+                <li>Dessert:<%= @menu.dessert %></li>
+              </ul>
+            </div>
 
-          <div class="description">
-            <ul>
-              <li>Starter:<%= @menu.starter %></li>
-              <li>Meal:<%= @menu.meal %></li>
-              <li>Dessert:<%= @menu.dessert %></li>
-            </ul>
           </div>
 
-        </div>
+          <div class="menu-card chef">
 
-        <div class="menu-card chef">
-
-          <div class="chef-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @menu.user.photo ? cl_image_path(@menu.user.photo.path, width: 750, height: 600, crop: :fill) : image_path("no_photo.png", width: 1000, height: 400) %>');">
-          <p>The chef:</p>
-          <h3><%= @menu.user.first_name %> <%= @menu.user.last_name %></h3>
+            <div class="chef-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @menu.user.photo ? cl_image_path(@menu.user.photo.path, width: 750, height: 600, crop: :fill) : image_path("no_photo.png", width: 1000, height: 400) %>');">
+            <p>The chef:</p>
+            <h3><%= @menu.user.first_name %> <%= @menu.user.last_name %></h3>
+            </div>
           </div>
-        </div>
 
 
-  </div>
-  <!--  right side -->
-  <div class="col-xs-12 col-sm-4">
-    <div class="action-card">
-      <p>Portions available: <%= @menu.portions %></p>
-      <%= link_to "Order now", @menu, class: 'btn cta-btn' %>
     </div>
-  </div>
+    <!--  right side -->
+  <div class="cards-container col-sm-4">
+    <div class="col-xs-12 col-sm-12 cards" >
+      <div class="action-card col-md-6 col-sm-12">
+        Portions
+        <%= select_tag :portions, options_for_select((1..15)), class: "styled-select style_form" %>
+      </div>
+
+        <div class="action-card col-md-6 col-sm-12">
+        Take away hours
+        <% hours = ["6:30pm-7:30pm", "7:30pm-8:30pm", "8:30pm-9:30pm", "9:30pm-10:30pm" ] %>
+          <%= select_tag :take_away_hours, options_for_select(hours), class: "styled-select style_form " %>
+        </div>
+        <div class="action-card col-md-12 col-sm-12 text-center">
+        Pig out option
+        <% complement = ["+50g", "+100g", "+150g", "+200g", "+250g", "+300g", "+350g", "+400g", "+450g", "+500g"  ] %>
+        <%= select_tag :pig_out_options, options_for_select(complement), class: "styled-select style_form" %>
+        </div>
+        <div class="already-ordered text-center ">
+            <p>Only: <%= @menu.portions %> portions available!</p>
+            <b><%= link_to "Order now", @menu, class: 'btn cta-btn col-xs-12 button_style' %></b>
+
+        </div>
+      </div>
+
+      <div class="text-center col-xs-12 col-sm-12 cards card-share">
+           Share with your friends
+            <ul class="list-inline">
+                <li>
+                  <a href=''>
+                   <i class="fa fa-facebook"/></i>
+                  </a>
+                </li>
+                <li>
+                  <a href=''>
+                    <i class="fa fa-instagram"/></i>
+                  </a>
+                </li>
+                <li>
+                  <a href=''>
+                    <i class="fa fa-google"/></i>
+                  </a>
+                </li>
+            </ul>
+        </div>
+      </div>
+
+      </div>
+
+
   </div>
   </div>
 
-<div>
-<!-- for the chef only -->
-for the chef only:
-<%= link_to edit_menu_path(@menu) do %> <i class="fa fa-edit"></i> Edit menu <% end %>
-</div>
+  <div>
+  <!-- for the chef only -->
+  for the chef only:
+  <%= link_to edit_menu_path(@menu) do %> <i class="fa fa-edit"></i> Edit menu <% end %>
+  </div>
 </div>
 
