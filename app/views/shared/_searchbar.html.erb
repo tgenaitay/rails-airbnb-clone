@@ -1,0 +1,12 @@
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <%= form_tag(menus_path, method: "get", class: "searchbar") do %>
+          <%= text_field_tag :city, nil, placeholder: 'City?', class: 'search-city' %>
+          <%= text_field_tag :date, nil, placeholder: 'Date?', "data-provide" => "datepicker" %>
+      <div class="styled-select">
+      <%= select_tag :portions, options_for_select((1..10), :selected => params[:portions]), include_blank: 'Portions' %>
+      </div>
+          <%= submit_tag "Search", class: "search-btn" %>
+        <% end %>
+      </div>
+    </div>
