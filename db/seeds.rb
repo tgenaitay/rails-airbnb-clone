@@ -307,7 +307,7 @@ user_index = 0
 menus.each do |menu|
   1.times do |i|
     order = Order.new({
-     date: DateTime.now,
+     date: menu.availability,
      approved: i.odd?,
      menu: menu
       })
