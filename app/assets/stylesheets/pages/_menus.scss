@@ -7,3 +7,19 @@
   background-repeat:no-repeat;
   background-size:cover;
 }
+
+.params {
+  width: 100%;
+  padding: 5px 20px;
+  background: #fff;
+  border-top: 1px solid #f0f0f0;
+  clear:both;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.param {
+  font-size:12px;
+  padding:8px 0px;
+}
