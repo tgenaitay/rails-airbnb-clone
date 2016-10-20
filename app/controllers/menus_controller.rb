@@ -5,15 +5,17 @@ class MenusController < ApplicationController
   def index
     portions = params[:portions]
     price = params[:price]
-    category = params[:category]
-    availability = params[:availability]
+    # category = params[:category]
+    date = params[:date]
 
     @menus = Menu.all
 
-    @menus = @menus.where(category: category) if category
-    @menus = @menus.where(availability: availability) if availability
-    @menus = @menus.where("price <= ? ", price) if price
-    @menus = @menus.where("portions >= ? ", portions) if portions
+    # @menus = @menus.where(category: category) if category
+    # @menus = @menus.where(availability: date) if date
+    @menus = @menus.where("portions >= ? ", portions) unless portions.blank?
+    @menus = @menus.where("price <= ? ", price) unless price.blank?
+    @menus = @menus.select { |menu| menu.user.city == params[:city] } if params[:city]
+    @total = @menus.count
 
   end
 

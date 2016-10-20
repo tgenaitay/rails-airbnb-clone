@@ -1,3 +1,4 @@
+require 'date'
 class Menu < ApplicationRecord
   belongs_to :user
   has_many :orders
@@ -17,7 +18,10 @@ class Menu < ApplicationRecord
       errors[:base] <<  "#{qtt} portion#{qtt>1 ? 's' : ''} are already booked, you can not have less portions available"
       throw :abort
     end
+  end
 
+  def friendly_date
+    self.availability.strftime("%e %B, %Y")
   end
 
 end

@@ -5,12 +5,13 @@
   </a>
 
   <!-- Search form -->
-  <form action="" class="navbar-wagon-search hidden-xs">
+  <%= form_tag(menus_path, method: "get", class: "navbar-wagon-search hidden-xs") do %>
     <button type="submit" class="navbar-wagon-search-btn">
       <i class="fa fa-search"></i>
     </button>
-    <input type="text" class="navbar-wagon-search-input" placeholder="Where?">
+  <%= text_field_tag :city, params[:city], placeholder: 'Where?', class: 'navbar-wagon-search-input' %>
   </form>
+  <% end %>
 
 
   <!-- Right Navigation -->
