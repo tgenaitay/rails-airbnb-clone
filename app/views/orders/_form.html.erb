@@ -3,7 +3,7 @@
     <%= f.error_notification %>
 
     <div class="text-center">
-        <p>Only: <%= @menu.portions - @menu.ordered_quantity %> portions available!</p>
+        <p><i class="fa fa-cutlery"></i> Only <%= @menu.portions - @menu.ordered_quantity %> portions available!</p>
      </div>
 
     <div class="action-card col-md-12 col-sm-12">

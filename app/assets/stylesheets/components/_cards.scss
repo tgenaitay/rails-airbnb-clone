@@ -9,7 +9,7 @@
 
 .cards-container{
   position: fixed;
-  right: 15px;
+  right: 40px;
 }
 .cards {
   background: white;
@@ -112,13 +112,20 @@
   background: #fff;
 }
 
+.description h2 {
+  font-size: 45px;
+  letter-spacing: -1px;
+  margin-top: 10px;
+  font-family: 'Dancing Script', cursive;
+}
+
 .description h3 {
   font-size: 17px;
   letter-spacing: -1px;
   margin-top: 10px;
 }
 .description p {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: lighter;
   float: left;
 }
@@ -127,6 +134,19 @@
   font-size: 14px;
   font-weight: bold;
   float:right;
+}
+
+.description ul {
+  padding:0px;
+  margin:0px;
+  list-style-type: none;
+}
+.description li {
+  padding: 10px 0px;
+  font-size: 13px;
+}
+.description li.bordered {
+  border-top: 1px solid #f0f0f0;
 }
 
 .localisation {

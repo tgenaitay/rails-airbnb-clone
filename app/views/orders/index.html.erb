@@ -47,7 +47,7 @@
             <span class="order_approved"><i class="fa fa-check-circle" aria-hidden="true"></i> order confirmed</span>
           <% end %>
           </li>
-          <li><% unless order.approved %>
+          <li><% if !order.approved %>
               <%= link_to order_path(order), method: :delete do %> <i class="fa fa-trash"></i> <% end %>
             <% end %>
           </li>
