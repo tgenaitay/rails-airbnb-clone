@@ -1,0 +1,25 @@
+.overlay {
+  background-color:rgb(255, 250, 250);
+  margin-top:50px;
+  padding:40px;
+}
+
+.overlay h1 {
+  font-weight:lighter;
+}
+
+.overlay p {
+  margin-top:30px;
+}
+
+.overlay .btn {
+  margin-top:20px;
+  line-height:30px;
+}
+
+.chef-page {
+  background-image: image-url('chef-bg.jpg');
+  background-size:cover;
+  height: 570px;
+  display:flex;
+}

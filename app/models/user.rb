@@ -38,4 +38,9 @@ class User < ApplicationRecord
     return menus.count > 0
   end
 
+  def city
+    return "" if self.address.nil?
+    return self.address.split(" ")[-1].capitalize
+  end
+
 end

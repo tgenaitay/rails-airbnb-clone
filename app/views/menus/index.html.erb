@@ -1,45 +1,69 @@
-<div class="hidden-xs col-sm-6 col-md-6 col-lg-6 left-side">
+<div>
+  <div class="hidden-xs col-sm-6 col-md-6 col-lg-6 left-side">
 
-    <%= form_tag(menus_path, method: "get", class: "little-searchbar") do %>
-      <%= text_field_tag :date, nil, placeholder: 'Date?', "data-provide" => "datepicker", class: 'small' %>
-      <div class="">
-        <%= select_tag :type, options_for_select([["lunch"], ["dinner"]]), class: "styled-select" %>
-      </div>
-      <div class="">
-        <%= select_tag :portions, options_for_select((1..20)), class: "styled-select" %>
-      </div>
-      <div class="">
-        <%= select_tag :price, options_for_select((4..200)), class: "styled-select" %>
-      </div>
-      <%= submit_tag "Filter" %>
-    <% end %>
+      <%= form_tag(menus_path, method: "get", class: "little-searchbar") do %>
+        <%= text_field_tag :date, nil, placeholder: 'Date?', "data-provide" => "datepicker", class: 'small' %>
 
-    <div class="row">
-      <% @menus.each do |menu| %>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+      <!--  <div class="styled-select">
+          <%= select_tag :category, options_for_select([["dinner"], ["lunch"]]), class: "styled-select" %>
+        </div> -->
 
-          <div class="menu-card">
-          <% menu_photo = (menu.photo ? cl_image_path(menu.photo.path) : image_path("no_photo_menu.png")) %>
-          <div class="photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= menu_photo %>');"><%= link_to " ", menu, class: 'link-menu' %>
-          </div>
-
-          <%= link_to chef_path(menu.user.id), class: 'link-chef' do %><%= menu.user.photo ? cl_image_tag(menu.user.photo.path, width: 300, height: 200, crop: :fill, class: 'avatar') : image_tag("no_photo.png", width: 300, height: 200, crop: :fill, class: 'avatar') %><% end %>
-            <div class="description">
-              <h3><%= menu.name %></h3>
-              <p><%= truncate(menu.description, :length => 40) %></p>
-              <span><%= menu.price %>€</span>
-            </div>
-            <div class="localisation">
-              <p><i class="fa fa-map-marker"></i> <%= menu.user.address if menu.user.address != NIL %></p>
-              <%= link_to "Order now", menu, class: 'btn cta-btn' %>
-            </div>
-          </div>
-
+        <div class="styled-select">
+        <%= select_tag :portions, options_for_select((1..10), :selected => params[:portions]), include_blank: 'Portions' %>
         </div>
+        <div class="styled-select">
+          <%= select_tag :price, options_for_select(((4..100).map { |prix| "#{prix} €" }).zip(4..100), :selected => params[:price]), include_blank: 'Budget' %>
+        </div>
+
+        <%= submit_tag "Filter" %>
+        <%
+        city = ""
+        city = "in #{params[:city]} !" if params[:city]
+        %>
+        <% total = "#{@total} results #{city}" %>
+        <%= label_tag 'name', total, class: 'small_total' %>
+
       <% end %>
-    </div>
-</div>
-<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=Marseille&scale=2&zoom=13&size=1000x1000&maptype=roadmap')">
+
+      <div class="row">
+        <% if @menus.count.zero? %>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <h2>Shoot. Nothing to show here!</h2>
+          <div>Please try new filters</div>
+        </div>
+        <% else
+        @menus.each do |menu| %>
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+
+            <div class="menu-card">
+              <% menu_photo = (menu.photo ? cl_image_path(menu.photo.path) : image_path("no_photo_menu.png")) %>
+              <div class="photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= menu_photo %>');"><%= link_to " ", menu, class: 'link-menu' %>
+              </div>
+
+            <%= link_to chef_path(menu.user.id), class: 'link-chef' do %>
+              <%= menu.user.photo ? cl_image_tag(menu.user.photo.path, width: 300, height: 200, crop: :fill, class: 'avatar') : image_tag("no_photo.png", width: 300, height: 200, crop: :fill, class: 'avatar') %>
+            <% end %>
+
+              <div class="description">
+                <h3><%= menu.name %></h3>
+                <h5><strong>Date: <%= menu.friendly_date %></strong></h5>
+                <h5>Portions: <%= menu.portions %></h5>
+                <p><%= truncate(menu.description, :length => 40) %></p>
+                <span><%= menu.price %>€</span>
+              </div>
+              <div class="localisation">
+                <p><i class="fa fa-map-marker"></i> <%= menu.user.city if menu.user.city != NIL %></p>
+                <%= link_to "Order now", menu, class: 'btn cta-btn' %>
+              </div>
+            </div>
+
+          </div>
+        <% end end %>
+      </div>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 map">
+  map here
+  </div>
 </div>
 
 

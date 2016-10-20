@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content:center;
   align-items: center;
-
+  clear:both;
 }
 
 /* Footer logo */
@@ -37,7 +37,6 @@
 
 #footer .form-control {
   flex:0 0 auto;
-  width:70%;
 }
 
 #footer .btn {
