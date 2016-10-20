@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :menus do
     resources :orders, only: [:index, :create, :update, :new]
   end
+  resources :orders, only: [:destroy]
 
   get "orders" => "orders#index"
   get "chef/:id" => "pages#landingchef", as: "chef"

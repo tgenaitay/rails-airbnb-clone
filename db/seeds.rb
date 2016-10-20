@@ -305,7 +305,7 @@ end
 orders = []
 user_index = 0
 menus.each do |menu|
-  2.times do |i|
+  1.times do |i|
     order = Order.new({
      date: DateTime.now,
      approved: i.odd?,
@@ -317,12 +317,36 @@ menus.each do |menu|
       user_index = 0 if user_index == users.length
     end
     order.user = users[user_index]
-    order.portions = menu.portions
+    order.portions = menu.portions - 1
 
     orders << order
     order.save!
   end
 end
+
+# menu sans order
+menus_attributes = [
+  {
+    price: 12,
+    description: "Sans order",
+    name: "Menu des amoureux",
+    starter: "Salade de jésiers au cresson, huile d'olive et petits magrets de canards",
+    meal: "Confis de canard, pommes sautées",
+    dessert: nil,
+    portions: 8,
+    availability: Date.today + 1,
+    category: "dinner",
+    photo_url: "http://photos-famille.net/wagon/menu/1.jpg"
+  },0]
+
+menus_attributes.each_slice(2) do |chunk|
+  menu = Menu.new(chunk[0])
+  menu.user = users[chunk[1]]
+  menu.save!
+  menus << menu
+end
+
+
 
 
    # movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
