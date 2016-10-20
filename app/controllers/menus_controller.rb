@@ -29,6 +29,7 @@ class MenusController < ApplicationController
 
   def create
     @menu = Menu.new(menu_params)
+    @menu.user = current_user
 
     respond_to do |format|
       if @menu.save
@@ -68,6 +69,6 @@ class MenusController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def menu_params
-      params.require(:menu).permit(:name, :description, :price, :portions, :availability, :photo)
+      params.require(:menu).permit(:name, :description, :price, :portions, :availability, :photo, :category)
     end
 end
