@@ -47,29 +47,18 @@
 
     </div>
     <!--  right side -->
-  <div class="cards-container col-sm-4">
-    <div class="col-xs-12 col-sm-12 cards" >
-      <div class="action-card col-md-6 col-sm-12">
-        Portions
-        <%= select_tag :portions, options_for_select((1..15)), class: "styled-select style_form" %>
-      </div>
+    <!-- STYLE TO REMOVE TODO -->
+  <div class="cards-container col-sm-4" style="
+    width: 333px;
+    top: 80px;
+    left: 872px;
+    bottom: 131px;
+">
 
-        <div class="action-card col-md-6 col-sm-12">
-        Take away hours
-        <% hours = ["6:30pm-7:30pm", "7:30pm-8:30pm", "8:30pm-9:30pm", "9:30pm-10:30pm" ] %>
-          <%= select_tag :take_away_hours, options_for_select(hours), class: "styled-select style_form " %>
-        </div>
-        <div class="action-card col-md-12 col-sm-12 text-center">
-        Pig out option
-        <% complement = ["+50g", "+100g", "+150g", "+200g", "+250g", "+300g", "+350g", "+400g", "+450g", "+500g"  ] %>
-        <%= select_tag :pig_out_options, options_for_select(complement), class: "styled-select style_form" %>
-        </div>
-        <div class="already-ordered text-center ">
-            <p>Only: <%= @menu.portions %> portions available!</p>
-            <b><%= link_to "Order now", @menu, class: 'btn cta-btn col-xs-12 button_style' %></b>
+<%= render '/orders/form', order: @order %>
 
-        </div>
-      </div>
+<!-- ici copicoll -->
+
 
       <div class="text-center col-xs-12 col-sm-12 cards card-share">
            Share with your friends

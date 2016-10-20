@@ -41,7 +41,7 @@
           <li><a href=""><i class="fa fa-share"></i></a></li>
           <li><a href=""><i class="fa fa-star"></i></a></li> -->
           <li>
-          <% if order.approved == false %>
+          <% if order.approved.nil? %>
             <span class="order_pending"><i class="fa fa-clock-o" aria-hidden="true"></i> order is pending</span>
           <% else %>
             <span class="order_approved"><i class="fa fa-check-circle" aria-hidden="true"></i> order confirmed</span>

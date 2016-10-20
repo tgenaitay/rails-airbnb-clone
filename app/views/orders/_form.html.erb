@@ -1,11 +1,20 @@
-<%= simple_form_for [@menu, @order] do |f| %>
-  <%= f.error_notification %>
+<div class="col-xs-12 col-sm-12 cards" >
+  <%= simple_form_for [@menu, @order] do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :portions %>
-  </div>
+    <div class="text-center">
+        <p>Only: <%= @menu.portions - @menu.ordered_quantity %> portions available!</p>
+     </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+    <div class="action-card col-md-12 col-sm-12">
+      <%= f.input :portions, collection: 1..(@menu.portions - @menu.ordered_quantity), include_blank: 'how many portions?', class: "styled-select style_form",label: false %>
+    </div>
+
+
+    <div class="form-actions col-md-12 col-sm-12">
+      <%= f.button :submit, 'Order now!', class: 'btn cta-btn col-xs-12 button_style' %>
+    </div>
+
+
+  <% end %>
+</div>
