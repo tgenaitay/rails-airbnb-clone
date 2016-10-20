@@ -1,0 +1,122 @@
+.orders {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+}
+
+.orders-empty {
+  text-align:center;
+}
+
+/* Body design */
+
+.orders-empty h4 {
+  margin-top: 100px;
+}
+
+.orders-empty p {
+  margin:20px 0px;
+}
+
+.orders-body {
+  flex: 1 1 auto;
+}
+.orders-body h3 {
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 0;
+}
+.orders-body p {
+  font-weight: lighter;
+  color: #999999;
+  margin-bottom: 0;
+}
+
+.orders-body a {
+  font-weight: lighter;
+  font-size:17px;
+}
+
+/* orders image */
+.orders-image {
+  border-radius: 10px;
+  margin: 0px 20px;
+  width: 175px;
+  z-index:1;
+}
+
+.orders-date {
+  margin: 2px 0 0;
+  font-size:17px;
+  text-align:center;
+  color:#E6E6E6;
+}
+
+.orders-date span {
+  font-size:13px;
+  color:$text-color;
+}
+
+.orders-portions {
+  z-index: 9;
+  top: 120px;
+  right: 30px;
+  position: relative;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  text-align: right;
+}
+
+.orders-portions i {
+  margin:2px;
+}
+
+/* Controls design */
+.orders-controls {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0px;
+}
+
+.orders-controls .order_pending {
+  color:#D23333;
+}
+
+.orders-controls .order_approved {
+  color:green;
+}
+
+.orders-controls a {
+  padding: 0 20px;
+  font-size: 17px;
+  color: #E6E6E6;
+}
+
+.orders-controls-hidden a {
+  color: transparent;
+  font-size: 17px;
+  transition: all 0.15s ease;
+  border-color: transparent;
+}
+
+/* Hover effects */
+.orders:hover {
+  background: #f7f7fa;
+}
+
+.orders-body a {
+  font-weight: lighter;
+  font-size:17px!important;
+}
+
+.orders-controls a:hover {
+  color: #D3473C!important;
+  font-size:17px!important;
+}
+
+// .orders:hover .orders-upvote { transform: scale(1.2) }
+.orders:hover .orders-controls-hidden a { color: #E6E6E6 }
+.orders-upvote:hover .orders-arrow { border-bottom: 9px solid #5898f1 }

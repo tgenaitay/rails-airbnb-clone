@@ -7,7 +7,11 @@
             <h3><strong>Enjoy</strong> the cooking of the best chefs nearby</h3>
         </div>
       </div>
-      <%= render 'searchbar' %>
+      <div class="search-container">
+        <div class="container">
+        <%= render 'shared/searchbar' %>
+        </div>
+      </div>
       <div class="filter"></div>
       <%= video_tag("/videos/fruity/MP4/Fruity.mp4", "/videos/fruity/OGV/Fruity.ogv", autoplay: true, loop: true, class: "fillWidth" ) %>
     </div>
