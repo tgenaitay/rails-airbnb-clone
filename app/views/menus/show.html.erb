@@ -39,11 +39,10 @@
 
         <div class="menu-card chef">
 
-          <div class="chef-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @menu.user.photo ? cl_image_path(@menu.user.photo.path, width: 1000, height: 400, gravity: :face, crop: :crop) : image_path("no_photo.png", width: 1000, height: 400) %>');">
+          <div class="chef-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @menu.user.photo ? cl_image_path(@menu.user.photo.path, width: 750, height: 600, crop: :fill) : image_path("no_photo.png", width: 1000, height: 400) %>');">
           <p>The chef:</p>
           <h3><%= @menu.user.first_name %> <%= @menu.user.last_name %></h3>
           </div>
-
         </div>
 
 
