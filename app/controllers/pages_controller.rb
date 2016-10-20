@@ -8,6 +8,7 @@ class PagesController < ApplicationController
   end
 
   def chef
+    @user = current_user
   end
 
   def home
