@@ -44,7 +44,7 @@ before_action :set_order, only: [:destroy, :approve, :reject]
     if @order.save
       redirect_to orders_path, notice: 'Your order is submitted for approval'
     else
-      render :new
+      render "menus/show"
     end
   end
 

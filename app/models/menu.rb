@@ -8,7 +8,7 @@ class Menu < ApplicationRecord
 
   before_save :check_stock
 
-  def ordered_quantity()
+  def ordered_quantity
     orders.inject(0){|sum,x| sum + (x.approved == false ? 0 : x.portions) }
   end
 
