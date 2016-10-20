@@ -4,15 +4,11 @@
       <%= form_tag(menus_path, method: "get", class: "little-searchbar") do %>
         <%= text_field_tag :date, nil, placeholder: 'Date?', "data-provide" => "datepicker", class: 'small' %>
 
-      <!--  <div class="styled-select">
-          <%= select_tag :category, options_for_select([["dinner"], ["lunch"]]), class: "styled-select" %>
-        </div> -->
-
         <div class="styled-select">
-        <%= select_tag :portions, options_for_select((1..10), :selected => params[:portions]), include_blank: 'Portions' %>
+        <%= select_tag :portions, options_for_select([1,2,3,4,6,8,10,12], :selected => params[:portions]), include_blank: 'Portions' %>
         </div>
         <div class="styled-select">
-          <%= select_tag :price, options_for_select(((4..100).map { |prix| "#{prix} €" }).zip(4..100), :selected => params[:price]), include_blank: 'Budget' %>
+          <%= select_tag :price, options_for_select(([3,5,10,15,20,30,50,70,100,150,200].map { |prix| "#{prix} €" }).zip([3,5,10,15,20,30,50,70,100,150,200]), :selected => params[:price]), include_blank: 'Budget' %>
         </div>
 
         <%= submit_tag "Filter" %>
@@ -65,6 +61,20 @@
   map here
   </div>
 </div>
+
+<!-- attempt to configure date-woodywood-picker -->
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function(){
+      $('.datepicker').datepicker({
+        todayBtn: true,
+        clearBtn: true,
+        autoclose: true,
+        todayHighlight: true
+      });
+  });
+  <% end %>
+<% end %>
 
 
 
