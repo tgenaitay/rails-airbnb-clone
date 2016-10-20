@@ -2,14 +2,13 @@
 
     <%= form_tag(menus_path, method: "get", class: "little-searchbar") do %>
       <%= text_field_tag :date, nil, placeholder: 'Date?', "data-provide" => "datepicker", class: 'small' %>
-      <div class="">
-        <%= select_tag :type, options_for_select([["lunch"], ["dinner"]]), class: "styled-select" %>
-      </div>
-      <div class="">
-        <%= select_tag :portions, options_for_select((1..20)), class: "styled-select" %>
-      </div>
-      <div class="">
-        <%= select_tag :price, options_for_select((4..200)), class: "styled-select" %>
+<!--       <div class="styled-select">
+        <%= select_tag :type, options_for_select([["dinner"], ["lunch"]]), class: "styled-select" %>
+      </div> -->
+    <div class="styled-select"><%= select_tag :portions, options_for_select((1..10)), include_blank: 'Portions'
+     %></div>
+      <div class="styled-select">
+        <%= select_tag :price, options_for_select(((4..100).map { |prix| "#{prix} €" }).zip(4..100)), include_blank: 'Budget' %>
       </div>
       <%= submit_tag "Filter" %>
     <% end %>
