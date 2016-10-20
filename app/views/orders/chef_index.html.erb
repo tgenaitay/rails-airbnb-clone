@@ -1,18 +1,49 @@
-<h1>My orders</h1>
+<div class="container">
+  <div class="row">
+    <div class="forms col-xs-12 col-sm-10 col-sm-offset-1 col-lg-10 col-lg-offset-1">
+      <div class="section">
+        <h2 class="text-center small">Orders</h2>
+      </div>
+        <% if @orders.count.zero?  %>
+        <div class="orders-empty">
+        <h4>You have no orders yet <i class="fa fa-frown-o" aria-hidden="true"></i></h4>
+        <p>Let's go ahead to find awesome menus:</p>
+        </div>
+        <%= render 'shared/searchbar' %>
+        <% end %>
 
-<ul>
-<% @orders.each do |order| %>
-  <li>
-    <div class="order_card">
-      <p>Menu: <% order.menu.name %>
-      <p>commande date: <%= order.created_at %></p>
-      <p>portions ordered: <%= order.portions %></p>
-      <p>Client : <%= order.user.full_name %></p>
-      <% status = (order.approved ? 'approved' : (order.approved.nil? ? 'pending' : 'rejected' ) ) %>
-      <p>Status : <%= status %></p>
-      <% if status == 'pending' %>
-        <p>Action : <%= link_to "approve", approve_path(order) %> | <%= link_to "reject", reject_path(order) %></p>
+      <% @orders.each do |order| %>
+
+      <div class="orders">
+        <div class='orders-id'>
+          <div class='date'>#<%= order.id %></div>
+        </div>
+        <div class='orders-date space'>
+          <div class='date'> <i class="fa fa-calendar" aria-hidden="true"></i> <span><%= order.friendly_date %></span></div>
+        </div>
+        <%
+        length = order.portions
+        str = "<span>#{length} </span>" + '<i class="fa fa-cutlery"></i>'
+        %>
+        <%=
+        cl_image_tag(order.user.photo.path, width: 100, height: 100, crop: :fill, class: 'avatar hidden-xs space') %>
+        <div class='orders-body space'>
+          <h4 class="orders-client"><%= order.user.full_name %></h4>
+          <p><%= str.html_safe %> - "<%= order.menu.name %>"</p>
+        </div>
+        <ul class="list-inline orders-controls hidden-sm hidden-xs space chefs">
+        <% status = (order.approved.nil? ? 'pending' : (order.approved ? 'approved' : 'rejected' ) ) %>
+         <% if status != 'pending' %>
+        <li><p>Status: <%= status %></p></li>
+        <% else %>
+        <li><%= link_to approve_path(order) do %> <i class="fa fa-check order_approved"></i> <% end %>| <%= link_to reject_path(order) do %> <i class="fa fa-trash order_pending"></i> <% end %>
+        </li>
+        <% end %>
+        </ul>
+      </div>
+
       <% end %>
+
     </div>
-<% end %>
-</ul>
+  </div>
+</div>
