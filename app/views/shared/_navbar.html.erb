@@ -17,8 +17,8 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs">
 
-    <% if !current_user.is_chef? %>
-    <%= link_to "chef", class: "navbar-wagon-item btn navbar-wagon-button" do %> Become a chef <i class="fa fa-info"></i> <% end end %>
+    <%= link_to "/chef", class: "navbar-wagon-item btn navbar-wagon-button" do %> Become a chef <i class="fa fa-info"></i>
+    <% end %>
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>

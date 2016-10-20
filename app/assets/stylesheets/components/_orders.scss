@@ -10,6 +10,10 @@
   text-align:center;
 }
 
+.orders .space {
+  margin-left:30px;
+}
+
 /* Body design */
 
 .orders-empty h4 {
@@ -52,6 +56,21 @@
   font-size:17px;
   text-align:center;
   color:#E6E6E6;
+}
+
+.orders-id {
+  margin: 2px 0 0;
+  font-size:17px;
+  text-align:center;
+  color:#E6E6E6;
+}
+
+.orders-client {
+  margin: 2px 0 0;
+  font-size:15px;
+  font-weight:bold;
+  color: #999999;
+  margin-bottom: 7px;
 }
 
 .orders-date span {
@@ -102,6 +121,10 @@
   border-color: transparent;
 }
 
+.orders-controls .fa {
+  transition: 0.1s color linear;
+}
+
 /* Hover effects */
 .orders:hover {
   background: #f7f7fa;
@@ -115,6 +138,10 @@
 .orders-controls a:hover {
   color: #D3473C!important;
   font-size:17px!important;
+}
+
+.orders-controls .fa:hover {
+  color:black;
 }
 
 // .orders:hover .orders-upvote { transform: scale(1.2) }

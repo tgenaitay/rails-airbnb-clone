@@ -10,6 +10,10 @@ class Order < ApplicationRecord
     self.date.strftime("%e %B, %Y")
   end
 
+  def friendly_date
+    self.created_at.strftime("%e %B, %Y")
+  end
+
   private
 
   def check_stock
