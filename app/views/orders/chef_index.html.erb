@@ -1,0 +1,18 @@
+<h1>My orders</h1>
+
+<ul>
+<% @orders.each do |order| %>
+  <li>
+    <div class="order_card">
+      <p>Menu: <% order.menu.name %>
+      <p>commande date: <%= order.created_at %></p>
+      <p>portions ordered: <%= order.portions %></p>
+      <p>Client : <%= order.user.full_name %></p>
+      <% status = (order.approved ? 'approved' : (order.approved.nil? ? 'pending' : 'rejected' ) ) %>
+      <p>Status : <%= status %></p>
+      <% if status == 'pending' %>
+        <p>Action : <%= link_to "approve", approve_path(order) %> | <%= link_to "reject", reject_path(order) %></p>
+      <% end %>
+    </div>
+<% end %>
+</ul>
