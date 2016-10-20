@@ -1,0 +1,6 @@
+<h1>New Order on <%= @menu.name %></h1>
+<% if @order %>
+<%= render 'form', order: @order %>
+<% else %>
+<%= @message %>
+<% end %>

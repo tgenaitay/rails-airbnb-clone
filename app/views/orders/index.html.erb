@@ -1,5 +1,5 @@
 <h1>My orders</h1>
-<p>Find me in app/views/orders/index.html.erb</p>
+
 <lu>
 <% @orders.each do |order| %>
   <li>
@@ -8,6 +8,9 @@
       <p>
       <p>Date: <%= order.buddy_date %></p>
       <p>Approuved: <%= order.approved %></p>
+      <% unless order.approved %>
+        <%= link_to "delete order", order_path(order), method: :delete %>
+      <% end %>
     </div>
 <% end %>
 </lu>
