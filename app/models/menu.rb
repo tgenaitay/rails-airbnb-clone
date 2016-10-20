@@ -4,4 +4,10 @@ class Menu < ApplicationRecord
   validates_inclusion_of :category, :in => ["lunch", "dinner"], :allow_nil => false
   has_attachment :photo
 
+  require 'date'
+
+  def friendly_date
+    self.availability.strftime("%e %B, %Y")
+  end
+
 end
