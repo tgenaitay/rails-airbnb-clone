@@ -1,16 +1,62 @@
-<h1>My orders</h1>
+<div class="container">
+  <div class="row">
+    <div class="forms col-xs-12 col-sm-10 col-sm-offset-1 col-lg-10 col-lg-offset-1">
+      <div class="section">
+        <h2 class="text-center small">My orders</h2>
+      </div>
+        <% if @orders.count.zero?  %>
+        <div class="orders-empty">
+        <h4>You have no orders yet <i class="fa fa-frown-o" aria-hidden="true"></i></h4>
+        <p>Let's go ahead to find awesome menus:</p>
+        </div>
+        <%= render 'shared/searchbar' %>
+        <% end %>
 
-<lu>
-<% @orders.each do |order| %>
-  <li>
-    <div class="order_card">
-      <p>Menu: <%= order.menu.name %> from <%= link_to order.menu.user.full_name, chef_path(order.menu.user) %>
-      <p>
-      <p>Date: <%= order.buddy_date %></p>
-      <p>Approuved: <%= order.approved %></p>
-      <% unless order.approved %>
-        <%= link_to "delete order", order_path(order), method: :delete %>
+      <% @orders.each do |order| %>
+
+      <div class="orders">
+        <div class='orders-date'>
+          <div class='date'> <i class="fa fa-calendar" aria-hidden="true"></i><br><span><%= order.buddy_date %></span></div>
+        </div>
+        <%= link_to menu_path(order.menu) do %>
+        <%
+        str = ""
+        length = order.portions
+        if length < 5
+        (1..length).each {|i| str += '<i class="fa fa-cutlery"></i>'}
+        else
+          str += "<span>#{length}</span>" + '<i class="fa fa-cutlery"></i>'
+        end
+        %>
+        <div class="orders-portions"><%= str.html_safe %></div>
+        <%=
+        cl_image_tag(order.menu.photo.path, width: 175, height: 130, crop: :fill, class: 'orders-image hidden-xs') %>
+        <% end %>
+        <div class='orders-body'>
+          <h3><%= order.menu.name %></h3>
+          <p>from <%= link_to order.menu.user.full_name, chef_path(order.menu.user) %></p>
+        </div>
+        <ul class="list-inline orders-controls hidden-sm hidden-xs">
+<!--             <li><a href=""><i class="fa fa-heart"></i></a></li>
+          <li><a href=""><i class="fa fa-share"></i></a></li>
+          <li><a href=""><i class="fa fa-star"></i></a></li> -->
+          <li>
+          <% if order.approved == false %>
+            <span class="order_pending"><i class="fa fa-clock-o" aria-hidden="true"></i> order is pending</span>
+          <% else %>
+            <span class="order_approved"><i class="fa fa-check-circle" aria-hidden="true"></i> order confirmed</span>
+          <% end %>
+          </li>
+          <li><% unless order.approved %>
+              <%= link_to order_path(order), method: :delete do %> <i class="fa fa-trash"></i> <% end %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+
       <% end %>
+
     </div>
-<% end %>
-</lu>
+  </div>
+</div>
+
