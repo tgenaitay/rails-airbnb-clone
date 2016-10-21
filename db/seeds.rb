@@ -108,9 +108,9 @@ menus_attributes = [
   {
     price: 16,
     description: "Menu des amoureux",
-    name: "Menu des amoureux",
+    name: "Un petit voyage dans les saveurs du sud-ouest",
     starter: "Salade de jésiers au cresson, huile d'olive et petits magrets de canards",
-    meal: "Confis de canard, pommes sautées",
+    meal: nil,
     dessert: nil,
     portions: 8,
     availability: Date.today + 1,
@@ -120,8 +120,8 @@ menus_attributes = [
   {
     price: 12,
     description: "Petit diner à 2",
-    name: "Petit diner à 2",
-    starter: "Salade de jésiers au cresson, huile d'olive et petits magrets de canards",
+    name: "Du canard pour toi, mon canard ...",
+    starter: nil,
     meal: "Confis de canard, pommes sautées",
     dessert: nil,
     portions: 6,
@@ -132,8 +132,8 @@ menus_attributes = [
   {
     price: 8,
     description: "Par ici le Sud-Ouest !",
-    name: "Par ici le Sud-Ouest !",
-    starter: "Salade de jésiers au cresson, huile d'olive et petits magrets de canards",
+    name: "Du vert et des épices, sous le soleil du sud !",
+    starter: "Petits magrets de canards",
     meal: "Confis de canard, pommes sautées",
     dessert: nil,
     portions: 2,
@@ -144,7 +144,7 @@ menus_attributes = [
   {
     price: 12,
     description: "Gratin de potirons et boeuf",
-    name: "Gratin de potirons et boeuf",
+    name: "Les enfants l'adore, les mamans aussi !",
     starter: "Salade de jésiers au cresson, huile d'olive et petits magrets de canards",
     meal: "Confis de canard, pommes sautées",
     dessert: nil,
@@ -156,7 +156,7 @@ menus_attributes = [
   {
     price: 15,
     description: "Filet de limande",
-    name: "Filet de Limande",
+    name: "Simple mais si savoureuse !",
     starter: "Salade de jésiers au cresson, huile d'olive et petits magrets de canards",
     meal: "Confis de canard, pommes sautées",
     dessert: nil,
@@ -168,7 +168,7 @@ menus_attributes = [
   {
     price: 15,
     description: "Daube de Boeuf",
-    name: "Daube de boeuf",
+    name: "Un classique de la cuisine provençale, vé !",
     starter: "Salade de jésiers au cresson, huile d'olive et petits magrets de canards",
     meal: "Confis de canard, pommes sautées",
     dessert: nil,
@@ -179,8 +179,8 @@ menus_attributes = [
   },2,
   {
     price: 15,
-    description: "Daube provençale",
-    name: "Daube provençale",
+    description: "Daube provençale à la canelle",
+    name: "Une daube provençale avec un soupçon des îles",
     starter: "Salade de jésiers au cresson, huile d'olive et petits magrets de canards",
     meal: "Confis de canard, pommes sautées",
     dessert: nil,
@@ -192,18 +192,18 @@ menus_attributes = [
   {
     price: 15,
     description: "Boeuf bourguignon",
-    name: "Boeuf bourguignon",
+    name: "Le classique des classiques, un bon boeuf bourguignon",
     starter: "Salade de jésiers au cresson, huile d'olive et petits magrets de canards",
     meal: "Confis de canard, pommes sautées",
     dessert: nil,
     portions: 10,
     availability: Date.today - 12,
     category: "lunch",
-    photo_url: "http://photos-famille.net/wagon/menu/6.jpg"
+    photo_url: "http://photos-famille.net/wagon/menu/10.jpg"
   },2, {
     price: 8,
     description: "Poireaux au cumin",
-    name: "Poireaux au cumin",
+    name: "Les fibres, les épices, la légéreté, votre corps va aimer",
     starter: "Salade de jésiers au cresson, huile d'olive et petits magrets de canards",
     meal: "Confis de canard, pommes sautées",
     dessert: nil,
@@ -215,7 +215,7 @@ menus_attributes = [
   {
     price: 8,
     description: "Quiche aux poireaux",
-    name: "Quiche aux poireaux",
+    name: "C'est un incontournable de la cuisine Ardéchoise",
     starter: "Salade de jésiers au cresson, huile d'olive et petits magrets de canards",
     meal: "Confis de canard, pommes sautées",
     dessert: nil,
@@ -226,7 +226,7 @@ menus_attributes = [
   },3,{
     price: 17,
     description: "filets de rascasse safranés",
-    name: "filets de rascasse safranés",
+    name: "Le sud et ses spécialités, un régal pour le palais !",
     starter: "Salade de jésiers au cresson, huile d'olive et petits magrets de canards",
     meal: "Confis de canard, pommes sautées",
     dessert: nil,
