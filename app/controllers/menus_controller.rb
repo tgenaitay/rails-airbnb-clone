@@ -14,7 +14,7 @@ class MenusController < ApplicationController
     # @menus = @menus.where(availability: date) if date
     @menus = @menus.where("portions >= ? ", portions) unless portions.blank?
     @menus = @menus.where("price <= ? ", price) unless price.blank?
-    @menus = @menus.select { |menu| menu.user.city == params[:city] } if ( params[:city] && !params[:city].empty?)
+    @menus = @menus.select { |menu| menu.user.city.downcase == params[:city].downcase } if ( params[:city] && !params[:city].empty?)
     @total = @menus.count
 
 
