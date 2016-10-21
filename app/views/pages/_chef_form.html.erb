@@ -9,17 +9,14 @@
             <%= f.error_notification %>
 
             <div class="form-inputs">
-<%= f.input :description, label: false, placeholder: "Tell us more about you" %>
+            <%= f.input :description, label: false, placeholder: "Tell us more about you" %>
             </div>
             <div class="form-inputs">
               <%= f.input :photo, as: :attachinary %>
             </div>
 
-            <%= f.button :submit, 'become an amazing chef', :class => 'btn btn-primary btn-block text-center' %>
+            <%= f.button :submit, 'Become an amazing chef', :class => 'btn btn-primary btn-block text-center' %>
           <% end %>
-
-
-          <% link_to new_menu_path do %> Become a chef <% end %>
 
       </div>
    </div>
