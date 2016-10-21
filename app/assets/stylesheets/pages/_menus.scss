@@ -1,12 +1,21 @@
+.searchpage {
+  background-color:rgba(245,245,245,1);
+}
 .left-side {
   background-color:rgba(245,245,245,1);
-  min-height:1200px;
+}
+
+.scroll {
+  height:890px;
+  overflow:scroll;
 }
 
 .map {
   height:1000px!important;
   background-repeat:no-repeat;
   background-size:cover;
+  padding:0px;
+  background-color:rgba(245,245,245,1);
 }
 
 .params {
