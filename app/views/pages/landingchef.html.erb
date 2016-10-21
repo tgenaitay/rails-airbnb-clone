@@ -1,9 +1,24 @@
-<h1>Fiche du chef <%= @user.full_name %></h1>
-<div>
-  <p>name:<%= @user.full_name %></p>
-  <p>description: <%= @user.description %>
-    <%= @user.photo ? cl_image_tag(@user.photo.path, width: 300, height: 200, crop: :fill) : image_tag("no_photo.png")%>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        <div class="menu-card">
+          <div class="section text-center landing-chef">
+            <h1><%= @user.full_name %></h1>
+          </div>
+          <div class="chef-profile description">
+            <div>
+            <%= @user.photo ? cl_image_tag(@user.photo.path, width: 500, height: 500, crop: :fill, class: 'avatar-large') : image_tag("no_photo.png")%>
+            </div>
+            <p><%= @user.description %></p>
+          </div>
+        </div>
 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      <%= render 'my_dishes', menus: @user.menus %>
+      </div>
+    </div>
+  </div>
 
-  <%= render 'my_dishes', menus: @user.menus %>
-</div>

@@ -107,3 +107,37 @@
   text-align: center;
   margin: 0 auto;
 }
+
+// TOP DISHES
+
+.landing-chef h1 {
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.3);
+  font-family: 'Dancing Script', cursive;
+  background-color: #fff;
+  position: relative;
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+  top: 15px;
+}
+
+.landing-chef {
+    margin-top: 50px;
+}
+
+// TOP DISHES
+
+.chef-profile {
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+}
+
+.chef-profile p {
+  vertical-align: center;
+  padding:30px;
+  font-style:italic;
+}
+
