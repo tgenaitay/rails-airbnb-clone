@@ -107,8 +107,8 @@ end
 menus_attributes = [
   {
     price: 16,
-    description: "Menu des amoureux",
-    name: "Un petit voyage dans les saveurs du sud-ouest",
+    name: "Menu des amoureux",
+    description: "Un petit voyage dans les saveurs du sud-ouest",
     starter: "Salade de jésiers au cresson, huile d'olive et petits magrets de canards",
     meal: nil,
     dessert: nil,
@@ -119,8 +119,8 @@ menus_attributes = [
   },0,
   {
     price: 12,
-    description: "Petit diner à 2",
-    name: "Du canard pour toi, mon canard ...",
+    name: "Petit diner à 2",
+    description: "Du canard pour toi, mon canard ...",
     starter: nil,
     meal: "Confis de canard, pommes sautées",
     dessert: nil,
@@ -131,8 +131,8 @@ menus_attributes = [
   },0,
   {
     price: 8,
-    description: "Par ici le Sud-Ouest !",
-    name: "Du vert et des épices, sous le soleil du sud !",
+    name: "Par ici le Sud-Ouest !",
+    description: "Du vert et des épices, sous le soleil du sud !",
     starter: "Petits magrets de canards",
     meal: "Confis de canard, pommes sautées",
     dessert: nil,
@@ -143,8 +143,8 @@ menus_attributes = [
   },0,
   {
     price: 12,
-    description: "Gratin de potirons et boeuf",
-    name: "Les enfants l'adore, les mamans aussi !",
+    name: "Gratin de potirons et boeuf",
+    description: "Les enfants l'adore, les mamans aussi !",
     starter: "Salade de jésiers au cresson, huile d'olive et petits magrets de canards",
     meal: "Confis de canard, pommes sautées",
     dessert: nil,
@@ -155,8 +155,8 @@ menus_attributes = [
   },1,
   {
     price: 15,
-    description: "Filet de limande",
-    name: "Simple mais si savoureuse !",
+    name: "Filet de limande",
+    description: "Simple mais si savoureuse !",
     starter: "Salade de jésiers au cresson, huile d'olive et petits magrets de canards",
     meal: "Confis de canard, pommes sautées",
     dessert: nil,
@@ -167,8 +167,8 @@ menus_attributes = [
   },1,
   {
     price: 15,
-    description: "Daube de Boeuf",
-    name: "Un classique de la cuisine provençale, vé !",
+    name: "Daube de Boeuf",
+    description: "Un classique de la cuisine provençale, vé !",
     starter: "Salade de jésiers au cresson, huile d'olive et petits magrets de canards",
     meal: "Confis de canard, pommes sautées",
     dessert: nil,
@@ -179,8 +179,8 @@ menus_attributes = [
   },2,
   {
     price: 15,
-    description: "Daube provençale à la canelle",
-    name: "Une daube provençale avec un soupçon des îles",
+    name: "Daube provençale à la canelle",
+    description: "Une daube provençale avec un soupçon des îles",
     starter: "Salade de jésiers au cresson, huile d'olive et petits magrets de canards",
     meal: "Confis de canard, pommes sautées",
     dessert: nil,
@@ -191,8 +191,8 @@ menus_attributes = [
   },2,
   {
     price: 15,
-    description: "Boeuf bourguignon",
-    name: "Le classique des classiques, un bon boeuf bourguignon",
+    name: "Boeuf bourguignon",
+    description: "Le classique des classiques, un bon boeuf bourguignon",
     starter: "Salade de jésiers au cresson, huile d'olive et petits magrets de canards",
     meal: "Confis de canard, pommes sautées",
     dessert: nil,
@@ -202,8 +202,8 @@ menus_attributes = [
     photo_url: "http://photos-famille.net/wagon/menu/10.jpg"
   },2, {
     price: 8,
-    description: "Poireaux au cumin",
-    name: "Les fibres, les épices, la légéreté, votre corps va aimer",
+    name: "Poireaux au cumin",
+    description: "Les fibres, les épices, la légéreté, votre corps va aimer",
     starter: "Salade de jésiers au cresson, huile d'olive et petits magrets de canards",
     meal: "Confis de canard, pommes sautées",
     dessert: nil,
@@ -214,8 +214,8 @@ menus_attributes = [
   },3,
   {
     price: 8,
-    description: "Quiche aux poireaux",
-    name: "C'est un incontournable de la cuisine Ardéchoise",
+    name: "Quiche aux poireaux",
+    description: "C'est un incontournable de la cuisine Ardéchoise",
     starter: "Salade de jésiers au cresson, huile d'olive et petits magrets de canards",
     meal: "Confis de canard, pommes sautées",
     dessert: nil,
@@ -225,8 +225,8 @@ menus_attributes = [
     photo_url: "http://photos-famille.net/wagon/menu/8.jpg"
   },3,{
     price: 17,
-    description: "filets de rascasse safranés",
-    name: "Le sud et ses spécialités, un régal pour le palais !",
+    name: "filets de rascasse safranés",
+    description: "Le sud et ses spécialités, un régal pour le palais !",
     starter: "Salade de jésiers au cresson, huile d'olive et petits magrets de canards",
     meal: "Confis de canard, pommes sautées",
     dessert: nil,
@@ -328,15 +328,15 @@ end
 menus_attributes = [
   {
     price: 12,
-    description: "Sans order",
-    name: "Menu des amoureux",
+    description: "Des briques savoureuses et généreuses, à déguster froid ou chaud",
+    name: "Briques chèvre tapenade",
     starter: "Salade de jésiers au cresson, huile d'olive et petits magrets de canards",
     meal: "Confis de canard, pommes sautées",
     dessert: nil,
     portions: 8,
     availability: Date.today + 1,
     category: "dinner",
-    photo_url: "http://photos-famille.net/wagon/menu/1.jpg"
+    photo_url: "http://photos-famille.net/wagon/menu/11.jpg"
   },0]
 
 menus_attributes.each_slice(2) do |chunk|
