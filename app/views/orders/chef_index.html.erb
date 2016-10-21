@@ -35,7 +35,7 @@
          <% if status != 'pending' %>
         <li><p>Status: <%= status %></p></li>
         <% else %>
-        <li><%= link_to approve_path(order) do %> <i class="fa fa-check order_approved"></i><% end %><span class="tip">approve</span>|reject <%= link_to reject_path(order), class: "toto", title: 'reject', 'data-toggle': 'tooltip' do %> <i class="fa fa-ban order_pending"></i> <% end %>
+        <li><%= link_to approve_path(order) do %> <i class="fa fa-check order_approved"></i><% end %> | <%= link_to reject_path(order), class: "toto", title: 'reject', 'data-toggle': 'tooltip' do %> <i class="fa fa-ban order_pending"></i><% end %>
         </li>
         <% end %>
         </ul>
