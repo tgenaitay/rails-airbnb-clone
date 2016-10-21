@@ -9,11 +9,11 @@
 
         <div class="description">
           <h3><%= menu.name %></h3>
-          <p>Lorem ipsum dolor sit amet.</p>
+          <p><%= truncate(menu.description, :length => 40) %></p>
           <span><%= menu.price %>€</span>
         </div>
         <div class="localisation">
-          <p><i class="fa fa-map-marker"></i> City</p>
+          <p><i class="fa fa-map-marker"></i> <%= menu.user.city if menu.user.city != NIL %></p>
           <%= link_to "Order now", menu, class: 'btn cta-btn' %>
         </div>
       </div>
