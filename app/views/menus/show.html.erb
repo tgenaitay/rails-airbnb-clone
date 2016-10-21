@@ -8,7 +8,7 @@
           <div class="photo large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=cl_image_path @menu.photo.path, width: 1000, height: 500, crop: :fill  %>');">
           </div>
 
-          <%= link_to chef_path(@menu.user.id), class: 'link-chef-large' do %><%= @menu.user.photo ? cl_image_tag(@menu.user.photo.path, width: 300, height: 200, crop: :crop, class: 'avatar') : image_tag("no_photo.png", width: 300, height: 200, crop: :crop, class: 'avatar') %><% end %>
+          <%= link_to landingchef_path(@menu.user.id), class: 'link-chef-large' do %><%= @menu.user.photo ? cl_image_tag(@menu.user.photo.path, width: 300, height: 200, crop: :crop, class: 'avatar') : image_tag("no_photo.png", width: 300, height: 200, crop: :crop, class: 'avatar') %><% end %>
 
             <div class="params description">
               <div class="param">

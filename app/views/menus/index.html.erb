@@ -36,7 +36,7 @@
               <div class="photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= menu_photo %>');"><%= link_to " ", menu, class: 'link-menu' %>
               </div>
 
-            <%= link_to chef_path(menu.user.id), class: 'link-chef' do %>
+            <%= link_to landingchef_path(menu.user.id), class: 'link-chef' do %>
               <%= menu.user.photo ? cl_image_tag(menu.user.photo.path, width: 200, height: 200, crop: :fill, class: 'avatar') : image_tag("no_photo.png", width: 200, height: 200, crop: :fill, class: 'avatar') %>
             <% end %>
 

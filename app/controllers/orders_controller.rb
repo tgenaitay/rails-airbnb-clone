@@ -3,7 +3,7 @@ before_action :set_menu, only: [:new, :create]
 before_action :set_order, only: [:destroy, :approve, :reject]
 
   def index
-    @orders = Order.where(user_id: current_user.id)
+    @orders = Order.where(user_id: current_user.id).order(created_at: :desc)
   end
 
   def chef_index
