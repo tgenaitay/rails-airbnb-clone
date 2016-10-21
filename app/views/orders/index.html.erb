@@ -34,7 +34,7 @@
         <% end %>
         <div class='orders-body'>
           <h3><%= order.menu.name %></h3>
-          <p>from <%= link_to order.menu.user.full_name, chef_path(order.menu.user) %></p>
+          <p>from <%= link_to order.menu.user.full_name, landingchef_path(order.menu.user) %></p>
         </div>
         <ul class="list-inline orders-controls hidden-sm hidden-xs">
 <!--             <li><a href=""><i class="fa fa-heart"></i></a></li>

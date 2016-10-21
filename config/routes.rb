@@ -13,7 +13,8 @@ Rails.application.routes.draw do
 
   get "orders" => "orders#index"
   get "chef/" => "pages#chef"
-  get "chef/:id" => "pages#landingchef"
+
+  get "landingchef/:id" => "pages#landingchef", as: "landingchef"
   get "orders/:id/approve" => "orders#approve", as: "approve"
   get "orders/:id/reject" => "orders#reject", as: "reject"
   get "mymenus" => "menus#mymenus"

@@ -17,7 +17,7 @@ class Order < ApplicationRecord
   private
 
   def check_stock
-    left = self.menu.portions - self.menu.ordered_quantity()
+    left = self.menu.portions - self.menu.ordered_quantity(self)
     if (self.portions) > left
       errors[:portions] <<  "You can not order more than #{left} portion#{left>1 ? 's' : ''}"
       throw :abort
