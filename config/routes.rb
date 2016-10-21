@@ -12,10 +12,11 @@ Rails.application.routes.draw do
   get "chef/orders" => "orders#chef_index"
 
   get "orders" => "orders#index"
-  get "chef/:id" => "pages#landingchef", as: "chef"
   get "chef/" => "pages#chef"
+  get "chef/:id" => "pages#landingchef"
   get "orders/:id/approve" => "orders#approve", as: "approve"
   get "orders/:id/reject" => "orders#reject", as: "reject"
+  get "mymenus" => "menus#mymenus"
 
 
   mount Attachinary::Engine => "/attachinary"

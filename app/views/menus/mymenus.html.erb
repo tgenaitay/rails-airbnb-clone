@@ -1,0 +1,39 @@
+<div class="container">
+<div class="row">
+
+
+        <% @menus.each do |menu| %>
+            <div class="col-sm-12 col-md-12 col-lg-3">
+            <div class="menu-card">
+              <% menu_photo = (menu.photo ? cl_image_path(menu.photo.path) : image_path("no_photo_menu.png")) %>
+              <div class="photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= menu_photo %>');"><%= link_to " ", menu, class: 'link-menu' %>
+              </div>
+
+              <div class="description">
+                <h3><%= menu.name %></h3>
+                <p><%= truncate(menu.description, :length => 40) %></p>
+                <span><%= menu.price %>€</span>
+              </div>
+
+              <div class="params">
+                <div class="param"><i class="fa fa-calendar"></i> <%= menu.friendly_date %></div>
+                <div class="param" style="color:red; font-size: 12px; font-weight: bold"><i class="fa fa-shopping-cart" ></i> <%= menu.ordered_quantity %></div>
+              </div>
+                <div class="param" style="font-size:40px"><i class="fa fa-cutlery"></i>
+
+                <%= simple_form_for menu do |f| %>
+                  <%= f.error_notification %>
+                  <%= f.input :portions, label: false, class: "small-input" %>
+                <% end %>
+
+                </div>
+
+          </div>
+
+
+  </div>
+   <% end %>
+
+</div>
+
+
