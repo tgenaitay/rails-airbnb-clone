@@ -22,7 +22,7 @@ gem 'font-awesome-sass'
 gem 'autoprefixer-rails'
 
 gem "cloudinary", "1.1.0"
-gem "attachinary", github: "assembler/attachinary"
+gem "attachinary", github: "assembler/attachinary.git"
 gem "jquery-fileupload-rails"
 gem "coffee-rails"
 gem "gmaps4rails"
