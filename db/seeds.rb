@@ -91,7 +91,7 @@ users_attributes = [
     email: "stephlebec79@gmail.com",
     password: p,
     photo_url: "http://photos-famille.net/wagon/women/3.jpg",
-    description: "J'aime tout ce qui est entrée froide (quiches, tartes, tourtes) et les salades. Charcuterie et fromage, il y a de quoi se régler sans passer des heures aux fourneaux.",
+    description: "",
     address: "19 rue François Moisson, 13002 Marseille"
   }
 ]
