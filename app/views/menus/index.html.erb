@@ -1,4 +1,4 @@
-<div>
+<div class="searchpage">
   <div class="hidden-xs col-sm-6 col-md-6 col-lg-6 left-side">
 
       <%= form_tag(menus_path, method: "get", class: "little-searchbar") do %>
@@ -21,7 +21,7 @@
 
       <% end %>
 
-      <div class="row">
+      <div class="row scroll">
         <% if @menus.count.zero? %>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-results text-center">
           <h2>Shoot. Nothing to show here!</h2>
@@ -60,7 +60,27 @@
       </div>
   </div>
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 map">
-  map here
+
+  <div id="map" style="width: 100%; height: 100%;"></div>
+
+  <% content_for(:after_js) do %>
+    <%= javascript_tag do %>
+      $(document).ready(function() {
+        var handler = Gmaps.build('Google');
+        handler.buildMap({ internal: { id: 'map' } }, function() {
+          markers = handler.addMarkers(<%= raw @hash.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+          if (markers.length == 0) {
+            handler.getMap().setZoom(2);
+          } else if (markers.length == 1) {
+            handler.getMap().setZoom(14);
+          }
+        });
+      });
+    <% end %>
+  <% end %>
+
   </div>
 </div>
 
