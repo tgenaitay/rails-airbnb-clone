@@ -1,5 +1,9 @@
 /* FORMS WITH BACKGROUND */
 
+.form-transparent{
+  background-color:rgba(255,255,255,0.5) !important;
+}
+
 .form-bg {
   background: image-url('banner.jpg') no-repeat 90% 40%;
   background-size: cover !important;
@@ -49,7 +53,6 @@
   width: 380px;
   text-align: center;
   margin: 0 auto;
-  background-color: white;
 }
 
 .forms h2 .small {
