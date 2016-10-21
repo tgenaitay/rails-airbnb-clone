@@ -1,15 +1,26 @@
-<div class="col-xs-12 col-sm-12 cards" >
+<div class="col-xs-12 col-sm-12 right-cards menu-card" >
   <%= simple_form_for [@menu, @order] do |f| %>
     <%= f.error_notification %>
 
-    <div class="text-center">
-        <p><i class="fa fa-cutlery"></i> Only <%= @menu.portions - @menu.ordered_quantity %> portions available!</p>
+    <div class="text-center action-card col-md-12 col-sm-12">
+      <p><i class="fa fa-cutlery"></i> Only <%= @menu.portions - @menu.ordered_quantity %> portions available!</p>
      </div>
+
+    <div class="action-card col-md-6 col-sm-6">
+      Take away hours
+      <% hours = ["6:30pm-7:30pm", "7:30pm-8:30pm", "8:30pm-9:30pm", "9:30pm-10:30pm" ] %>
+      <%= select_tag :take_away_hours, options_for_select(hours), class: "styled-select style_form " %>
+    </div>
+
+    <div class="action-card col-md-6 col-sm-6">
+      Pig out option
+      <% complement = ["+50g", "+100g", "+150g", "+200g", "+250g", "+300g", "+350g", "+400g", "+450g", "+500g"  ] %>
+      <%= select_tag :pig_out_options, options_for_select(complement), class: "styled-select style_form" %>
+    </div>
 
     <div class="action-card col-md-12 col-sm-12">
       <%= f.input :portions, collection: 1..(@menu.portions - @menu.ordered_quantity), include_blank: 'how many portions?', class: "styled-select style_form",label: false %>
     </div>
-
 
     <div class="form-actions col-md-12 col-sm-12">
       <%= f.button :submit, 'Order now!', class: 'btn cta-btn col-xs-12 button_style' %>

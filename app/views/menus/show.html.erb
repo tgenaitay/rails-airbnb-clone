@@ -36,36 +36,15 @@
       </div>
 
     <!--  right side -->
-      <div class="cards-container col-sm-4">
+      <div class="right-card-container col-sm-4">
 
         <%= render '/orders/form', order: @order %>
 
-        <div class="text-center col-xs-12 col-sm-12 cards card-share">
-          <div>Share with your friends</div>
-          <ul class="list-inline">
-              <li>
-                <a href="">
-                 <i class="fa fa-facebook"></i>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <i class="fa fa-instagram"></i>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <i class="fa fa-google"></i>
-                </a>
-              </li>
-          </ul>
-        </div>
+        <%= render 'sharing' %>
 
       </div>
     </div>
   </div>
-
-<div>
 
   <!-- for the chef only -->
   for the chef only:
