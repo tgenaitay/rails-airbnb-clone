@@ -19,11 +19,11 @@
                 <div class="param"><i class="fa fa-calendar"></i> <%= menu.friendly_date %></div>
                 <div class="param" style="color:red; font-size: 12px; font-weight: bold"><i class="fa fa-shopping-cart" ></i> <%= menu.ordered_quantity %></div>
               </div>
-                <div class="param" style="font-size:40px"><i class="fa fa-cutlery"></i>
+                <div class="param forms" style="font-size:40px"><i class="fa fa-cutlery"></i>
 
                 <%= simple_form_for menu do |f| %>
                   <%= f.error_notification %>
-                  <%= f.input :portions, label: false, class: "small-input" %>
+                  <%= f.input :portions, label: false, class: "form-control" %>
                 <% end %>
 
                 </div>
@@ -34,7 +34,7 @@
   </div>
    <% end %>
 
-   <%= link_to "Create a new menu", new_menu_path %>
+   <%= link_to "Create a new menu", new_menu_path, class:'btn cta-btn' %>
 
 </div>
 
