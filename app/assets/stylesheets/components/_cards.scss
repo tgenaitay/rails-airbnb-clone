@@ -8,8 +8,7 @@
 }
 
 .right-card-container{
-  position: fixed;
-  right: 40px;
+  left: 20px;
 }
 
 .right-cards {
@@ -21,6 +20,7 @@
  margin-top: 25px;
  font-size:13px;
  color:gray;
+ padding-bottom:0px;
 }
 
 .style_form {
@@ -247,4 +247,24 @@
   font-weight: bold;
   position: relative;
   top: 25px;
+}
+
+.card-share li {
+    padding: 15px;
+    border-right:1px solid #ccc;
+    margin-right: -4px;
+}
+
+.card-share li:last-child {
+    padding: 15px;
+    border-right:0px solid #ccc;
+}
+
+.card-share ul {
+  margin-bottom:5px;
+  margin-top:10px;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content: center;
 }
