@@ -7,17 +7,20 @@
   background-color:white;
 }
 
-.cards-container{
-  position: fixed;
-  right: 15px;
+.right-card-container{
+  left: 20px;
 }
-.cards {
+
+.right-cards {
   background: white;
-  padding: 0px;
+  padding: 15px;
 }
 
 .card-share {
  margin-top: 25px;
+ font-size:13px;
+ color:gray;
+ padding-bottom:0px;
 }
 
 .style_form {
@@ -112,13 +115,20 @@
   background: #fff;
 }
 
+.description h2 {
+  font-size: 45px;
+  letter-spacing: -1px;
+  margin-top: 10px;
+  font-family: 'Dancing Script', cursive;
+}
+
 .description h3 {
   font-size: 17px;
   letter-spacing: -1px;
   margin-top: 10px;
 }
 .description p {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: lighter;
   float: left;
 }
@@ -127,6 +137,19 @@
   font-size: 14px;
   font-weight: bold;
   float:right;
+}
+
+.description ul {
+  padding:0px;
+  margin:0px;
+  list-style-type: none;
+}
+.description li {
+  padding: 10px 0px;
+  font-size: 13px;
+}
+.description li.bordered {
+  border-top: 1px solid #f0f0f0;
 }
 
 .localisation {
@@ -161,6 +184,16 @@
   opacity: 0.1;
 }
 
+.card-share a {
+ text-decoration:none;
+ color:black;
+}
+
+.card-share a:hover {
+ text-decoration:none;
+ color:black;
+}
+
 .chef .chef-photo {
   z-index:0;
   position:relative;
@@ -179,4 +212,59 @@
   color:white;
   z-index:9;
   position:relative;
+}
+
+.action-card {
+
+}
+
+.action-card span {
+  font-size:13px;
+}
+
+.action-card .styled-select {
+  margin-top:3px!important;
+}
+
+.portions {
+  font-size:13px;
+  font-weight:bold;
+}
+
+.portions .empty {
+  color:$brand-color;
+}
+
+.gone {
+  color: gray;
+  padding: 40px;
+  background-color: lightgray;
+  font-size: 12px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+  top: 25px;
+}
+
+.card-share li {
+    padding: 15px;
+    border-right:1px solid #ccc;
+    margin-right: -4px;
+}
+
+.card-share li:last-child {
+    padding: 15px;
+    border-right:0px solid #ccc;
+}
+
+.card-share ul {
+  margin-bottom:5px;
+  margin-top:10px;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content: center;
 }
