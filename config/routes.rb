@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  root to: 'pages#home'
 
   resources :menus do
     resources :orders, only: [:index, :create, :update, :new]
@@ -22,11 +23,7 @@ Rails.application.routes.draw do
 
   mount Attachinary::Engine => "/attachinary"
 
-
-
-  resources :users, only: [:show]
-  root to: 'pages#home'
-
+  resources :users, only: [:show, :update]
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
