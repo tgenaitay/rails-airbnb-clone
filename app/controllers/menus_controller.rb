@@ -19,6 +19,10 @@ class MenusController < ApplicationController
 
   end
 
+  def mymenus
+    @menus = current_user.menus.order(:created_at)
+  end
+
   def show
     @order = Order.new
   end
@@ -44,16 +48,17 @@ class MenusController < ApplicationController
       end
     end
   end
+
+
   def update
-    respond_to do |format|
-      if @menu.update(menu_params)
-        format.html { redirect_to @menu, notice: 'Your menu was successfully updated.It looks delicious' }
-        format.json { render :show, status: :ok, location: @cocktail }
+      @menus = current_user.menus.order(:created_at)
+      menu = @menus.find(params[:id])
+      if menu.update(menu_params)
+        redirect_to mymenus_path, notice: 'Your menu was successfully updated'
       else
-        format.html { render :edit }
-        format.json { render json: @menu.errors, status: :unprocessable_entity }
+        render :mymenus
       end
-    end
+
   end
 
   def destroy

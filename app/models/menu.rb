@@ -15,7 +15,7 @@ class Menu < ApplicationRecord
   def check_stock
     qtt = self.ordered_quantity()
     if qtt > self.portions
-      errors[:base] <<  "#{qtt} portion#{qtt>1 ? 's' : ''} are already booked, you can not have less portions available"
+      errors[:portions] <<  "#{qtt} portion#{qtt>1 ? 's' : ''} are already booked, you can not have less portions available"
       throw :abort
     end
   end

@@ -16,8 +16,9 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs">
-
-    <%= link_to "/chef", class: "navbar-wagon-item btn navbar-wagon-button" do %> Become a chef <i class="fa fa-info"></i>
+    <% if !user_signed_in? || !current_user.is_chef? %>
+      <%= link_to chef_path, class: "navbar-wagon-item btn navbar-wagon-button" do %> Become a chef <i class="fa fa-info"></i>
+      <% end %>
     <% end %>
 
     <!-- Different navigation if login or not -->
@@ -52,6 +53,11 @@
             <li>
               <%= link_to chef_orders_path do %>
                 <i class="fa fa-cutlery"></i>  <%= t(".profile", default: "Requests for order") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to mymenus_path do %>
+                <i class="fa fa-list"></i>  <%= t(".profile", default: "My menus") %>
               <% end %>
             </li>
             <% end %>

@@ -41,13 +41,16 @@
           <li><a href=""><i class="fa fa-share"></i></a></li>
           <li><a href=""><i class="fa fa-star"></i></a></li> -->
           <li>
+
           <% if order.approved.nil? %>
             <span class="order_pending"><i class="fa fa-clock-o" aria-hidden="true"></i> order is pending</span>
-          <% else %>
+          <% elsif order.approved %>
             <span class="order_approved"><i class="fa fa-check-circle" aria-hidden="true"></i> order confirmed</span>
+            <% else %>
+             <span class="order_rejected"><i class="fa fa-ban" aria-hidden="true"></i> order rejected</span>
           <% end %>
           </li>
-          <li><% unless order.approved %>
+          <li><% if order.approved.nil? || !order.approved %>
               <%= link_to order_path(order), method: :delete do %> <i class="fa fa-trash"></i> <% end %>
             <% end %>
           </li>
