@@ -1,5 +1,6 @@
 .left-side {
   background-color:rgba(245,245,245,1);
+  min-height:1200px;
 }
 
 .map {
@@ -22,4 +23,8 @@
 .param {
   font-size:12px;
   padding:8px 0px;
+}
+
+.no-results h2 {
+  font-family: 'Dancing Script', cursive;
 }
