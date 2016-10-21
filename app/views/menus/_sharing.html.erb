@@ -1,19 +1,19 @@
 <div class="text-center col-xs-12 col-sm-12 right-cards card-share menu-card">
-<div>Share with your friends</div>
+<div>Share it with your friends</div>
 <ul class="list-inline">
     <li>
-      <a href="">
-       <i class="fa fa-facebook"></i>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=<%= request.original_url  %>">
+       <i class="fa fa-facebook"></i> Facebook
       </a>
     </li>
     <li>
-      <a href="">
-        <i class="fa fa-instagram"></i>
+      <a href="https://twitter.com/home?status=<%= request.original_url  %>">
+        <i class="fa fa-twitter"></i> Twitter
       </a>
     </li>
     <li>
-      <a href="">
-        <i class="fa fa-google"></i>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=<%= request.original_url  %>&title=Beautyfood&summary=&source=">
+        <i class="fa fa-linkedin"></i> LinkedIn
       </a>
     </li>
 </ul>

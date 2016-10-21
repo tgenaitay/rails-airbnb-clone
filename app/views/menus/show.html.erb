@@ -10,10 +10,16 @@
 
           <%= link_to chef_path(@menu.user.id), class: 'link-chef-large' do %><%= @menu.user.photo ? cl_image_tag(@menu.user.photo.path, width: 300, height: 200, crop: :crop, class: 'avatar') : image_tag("no_photo.png", width: 300, height: 200, crop: :crop, class: 'avatar') %><% end %>
 
-          <div class="description">
-            <h2><%= @menu.name %></h2>
-            <div><%= @menu.description %></div>
-          </div>
+            <div class="params description">
+              <div class="param">
+                <h2><%= @menu.name %></h2>
+                <div><%= @menu.description %></div>
+              </div>
+              <div class="param">
+                <div class="price"><%= @menu.price %>€</div>
+              </div>
+            </div>
+
           <div class="params">
             <div class="param"><i class="fa fa-calendar"></i> <%= @menu.friendly_date %></div>
             <div class="param"><i class="fa fa-cutlery"></i> <%= @menu.portions %></div>
@@ -27,9 +33,9 @@
         <div class="menu-card">
           <div class="description">
             <ul>
-              <li>Starter:<%= @menu.starter %></li>
-              <li class="bordered">Meal:<%= @menu.meal %></li>
-              <li class="bordered">Dessert:<%= @menu.dessert %></li>
+              <li>Starter: <%= @menu.starter %></li>
+              <li class="bordered">Meal: <%= @menu.meal %></li>
+              <li class="bordered">Dessert: <%= @menu.dessert %></li>
             </ul>
           </div>
         </div>
